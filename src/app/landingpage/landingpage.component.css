@@ -1,0 +1,64 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+@import 'https://fonts.googleapis.com/css?family=Kaushan+Script';
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+.dropdown-menu-custom {
+  top: 5.5rem !important;
+  min-width: 8rem !important;
+  padding: .5rem 0 !important;
+  text-align: left !important;
+  background-color: #212529 !important;
+  right: 12rem !important;
+  left: auto !important;
+  /* opacity: 0.8; */
+  border: solid 1px #000 !important;
+}
+
+
+.dropdown-item {
+  color: #fff !important;
+}
+
+.dropdown-item:hover,.dropdown-item:focus,.dropdown-item:active {
+  color: #000 !important;
+  background-color: #343a40 !important;
+}
+
+.link-decorator {
+  cursor: pointer;
+  color: #fff !important;
+  font-weight: 900 !important;
+}
+
+.p-footer {
+  color: #fff!important;
+  font-weight: 900 !important;
+  margin-bottom: 1.75rem;
+  box-sizing: border-box;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+footer{
+  background-color: #9c9c9c !important;
+}
+
+
+.button-register{
+  box-shadow: 0 0 0 0.2rem rgb(103 113 148 / 50%) !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #cecece;
+}
+.animated.infinite[_ngcontent-mge-c103] {
+    animation-iteration-count: infinite;
+}
+
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgb(103 113 148 / 50%) !important;
+}
