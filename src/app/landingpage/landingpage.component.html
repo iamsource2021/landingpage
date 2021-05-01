@@ -28,7 +28,7 @@
       </div>
   </div>
 </nav>
-<header class="masthead" style="background-image: url('assets/landingpage-assets/img/puente.png');">
+<header *ngIf="statusChanged === 'home'" class="masthead" style="background-image: url('assets/landingpage-assets/img/puente.png');">
   <div class="container">
       <div class="intro-text">
           <div class="intro-lead-in"><span>{{i18n.get('home:header:title1')}}</span></div>

@@ -26,7 +26,7 @@ export class LandingpageComponent implements OnInit {
 
   public i18n = I18n;
 
-  public statusChanged = 'home';
+  public statusChanged = 'home';//home
 
   public eventEmmiter:landingEvent = {statusChanged:'',data:[]};
 

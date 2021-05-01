@@ -1,0 +1,32 @@
+/* p {
+  font-size: 1.5rem;
+  text-align: justify;
+  margin: 4rem;
+} */
+
+
+.p-footer {
+  font-size: 0.9rem !important;
+}
+
+p,h2{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.text-title{
+  margin-top: 12rem !important;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.question-title{
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+ngb-accordion > div.card {
+  margin: 0 5rem !important;
+}
+
+.spacer {  margin-top: 40px; }
