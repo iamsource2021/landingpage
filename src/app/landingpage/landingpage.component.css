@@ -10,10 +10,8 @@
   background-color: #212529 !important;
   right: 12rem !important;
   left: auto !important;
-  /* opacity: 0.8; */
   border: solid 1px #000 !important;
 }
-
 
 .dropdown-item {
   color: #fff !important;
@@ -23,6 +21,26 @@
   color: #000 !important;
   background-color: #343a40 !important;
 }
+footer{
+  background-color: #9c9c9c !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #cecece;
+}
+.animated.infinite {
+    animation-iteration-count: infinite;
+}
+
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgb(103 113 148 / 50%) !important;
+}
+
+
+/* Deprecated */
 
 .link-decorator {
   cursor: pointer;
@@ -40,25 +58,6 @@
 }
 
 
-footer{
-  background-color: #9c9c9c !important;
-}
-
-
 .button-register{
-  box-shadow: 0 0 0 0.2rem rgb(103 113 148 / 50%) !important;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #0062cc;
-    border-color: #cecece;
-}
-.animated.infinite[_ngcontent-mge-c103] {
-    animation-iteration-count: infinite;
-}
-
-
-.btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgb(103 113 148 / 50%) !important;
 }
