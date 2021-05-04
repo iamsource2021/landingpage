@@ -17,6 +17,7 @@ import { FormControlSignup } from './form-control-signup';
 import { I18n } from "aws-amplify";
 import './../traslations/languages';
 import { AuthService } from './../services/auth.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signup',
@@ -54,8 +55,12 @@ export class SignupComponent implements OnInit {
 
   public i18n = I18n;
 
-  constructor(private AuthService: AuthService) {
+  constructor(
+    private AuthService: AuthService,
+    private titleService: Title
+    ) {
     this.i18n.setLanguage("en-US");
+    this.titleService.setTitle('CompassGrain - Sign Up');
   }
 
   ngOnInit(): void {

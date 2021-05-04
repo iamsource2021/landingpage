@@ -4,8 +4,9 @@ import {
   ChangeDetectionStrategy,
   Output,
   EventEmitter } from '@angular/core';
-  import { I18n } from "aws-amplify";
-  import './traslations/languages';
+import { I18n } from "aws-amplify";
+import './traslations/languages';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-landingpage',
@@ -32,8 +33,9 @@ export class LandingpageComponent implements OnInit {
 
   public lange:string = "en-US";
 
-  constructor() {
+  constructor(private titleService: Title) {
     this.i18n.setLanguage(this.lange);
+    this.titleService.setTitle('CompassGrain - Home');
   }
 
   setLanguageClick(lange:string){

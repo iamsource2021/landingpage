@@ -15,6 +15,8 @@ import './../traslations/languages';
 import { environment } from './../../../environments/environment';
 import { ButtonstageBehaviorsubjectService } from './buttonstage-behaviorsubject.service';
 import { Subscription,Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-confirmsignup',
   templateUrl: './confirmsignup.component.html',
@@ -53,9 +55,11 @@ export class ConfirmsignupComponent implements OnInit {
   );
   constructor(
     private AuthService: AuthService,
-    private _ButtonstageBehaviorsubjectService:ButtonstageBehaviorsubjectService
+    private _ButtonstageBehaviorsubjectService:ButtonstageBehaviorsubjectService,
+    private titleService: Title
     ) {
     this.i18n.setLanguage("en-US");
+    this.titleService.setTitle('CompassGrain - Confirm Sign Up');
   }
 
   ngOnInit(): void {

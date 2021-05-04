@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Output,
   EventEmitter } from '@angular/core';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-descargo',
   templateUrl: './descargo.component.html',
@@ -14,7 +14,9 @@ import {
 export class DescargoComponent implements OnInit {
   @Output() chageStatusEvent = new EventEmitter<object>();
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('CompassGrain - Disclaimer');
+  }
 
   ngOnInit(): void {
   }

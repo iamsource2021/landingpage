@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Output,
   EventEmitter } from '@angular/core';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-learn',
   templateUrl: './learn.component.html',
@@ -14,7 +14,9 @@ import {
 export class LearnComponent implements OnInit {
   @Output() chageStatusEvent = new EventEmitter<object>();
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('CompassGrain - Learnig');
+  }
 
   ngOnInit(): void {
   }
