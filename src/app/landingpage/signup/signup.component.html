@@ -1,0 +1,81 @@
+<div class="container-fluid container-signup-custom">
+  <div class="row">
+    <div class="col col-lg-12 col-xl-12">
+      <div class="login-clean login-clean-custom" [@simpleFadeAnimation]="'in'">
+        <form [formGroup]="signupform">
+          <a class="float-right" style="cursor: pointer;" routerLinkActive="false">
+            <i class="la la-close"></i>
+          </a>
+          <h3>{{i18n.get('signup:Crete a New Acount')}}</h3>
+
+          <div class="form-group">
+            <input class="form-control" type="email" name="email" [placeholder]="i18n.get('signup:email:placeholder')"
+              name="email" autocomplete="off" [ngClass]="onValidate('email')"
+              formControlName="email">
+            <p class="mt-2" *ngIf="signupform.controls.email.errors?.required">
+              <small>{{i18n.get('signup:email:required')}}</small>
+            </p>
+            <p class="mt-2" *ngIf="signupform.controls.email.errors?.email">
+              <small>{{i18n.get('signup:email:email')}}</small>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="password" name="password"
+              [placeholder]="i18n.get('signup:password:placeholder')" name="password" autocomplete="off"
+              [ngClass]="onValidate('password')"
+              formControlName="password">
+            <p class="mt-2" *ngIf="signupform.controls.password.errors?.required">
+              <small>{{i18n.get('signup:password:required')}}</small>
+            </p>
+            <p class="mt-2" *ngIf="signupform.controls.password.errors?.minlength">
+              <small>{{i18n.get('signup:password:minlength')}}</small>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="password" name="repassword"
+              [placeholder]="i18n.get('signup:repassword:placeholder')" name="repassword" autocomplete="off"
+              [ngClass]="onValidate('repassword')"
+              formControlName="repassword">
+            <p class="mt-2" *ngIf="signupform.controls.repassword.errors?.required">
+              <small>{{i18n.get('signup:repassword:required')}}</small>
+            </p>
+            <p class="mt-2" *ngIf="signupform.controls.repassword.errors?.MatchPassword">
+              <small>{{i18n.get('signup:repassword:MatchPassword')}}</small>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <div class="container">
+              <div class="form-check custom-control custom-checkbox mb-3">
+                <input class="form-check-input custom-control-input" type="checkbox" id="customCheck" checked=""
+                  name="tos" [ngClass]="onValidate('tos')"
+                  formControlName="tos">
+                <label class="form-check-label custom-control-label"
+                  for="customCheck"><strong>{{i18n.get('signup:tos:label')}}</strong></label>
+                <p class="mt-2" *ngIf="signupform.controls.tos.errors?.required">
+                  <small>{{i18n.get('signup:tos:required')}}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row row align-items-center">
+              <div class="col">
+                <button class="btn btn-primary btn-block mt-0" type="button" *ngIf="buttonStates==='valid'" (click)="onSignUp()">
+                  {{i18n.get('CREATE ACCOUNT')}}
+                </button>
+                <button class="btn btn-primary btn-block mt-0" type="button" *ngIf="buttonStates==='disabled'"  disabled>
+                  <i class="fa fa-spinner fa-spin mr-1"></i>
+                  {{i18n.get('CREATE ACCOUNT')}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -30,12 +30,15 @@ export class LandingpageComponent implements OnInit {
 
   public eventEmmiter:landingEvent = {statusChanged:'',data:[]};
 
+  public lange:string = "en-US";
+
   constructor() {
-    this.i18n.setLanguage("en-US");
+    this.i18n.setLanguage(this.lange);
   }
 
   setLanguageClick(lange:string){
     this.i18n.setLanguage(lange);
+    this.lange = lange;
   }
   ngOnInit(): void {
   }

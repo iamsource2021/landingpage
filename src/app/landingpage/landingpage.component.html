@@ -35,7 +35,8 @@
           <div class="bounce animated intro-heading text-uppercase">
             <span>{{i18n.get('home:header:title2')}}</span>
           </div>
-          <a class="btn btn-primary pulse animated infinite btn-xl text-uppercase button-register" role="button" href="#services">
+          <a class="btn btn-primary pulse animated infinite btn-xl text-uppercase button-register"
+          role="button"  (click)="openSection('signup')">
             {{i18n.get('home:header:register')}}
           </a>
       </div>
@@ -65,6 +66,16 @@
 
 <app-regulacion *ngIf="statusChanged === 'regulacion'"
 (chageStatusEvent)="statusChangedEvent($event)"></app-regulacion>
+
+<app-signup *ngIf="statusChanged === 'signup'"
+(chageStatusEvent)="statusChangedEvent($event)"
+[language]="lange"></app-signup>
+
+<app-confirmsignup *ngIf="statusChanged === 'confirmsignup'"
+(chageStatusEvent)="statusChangedEvent($event)"
+[email]="eventEmmiter?.data['email']||null"
+[language]="lange">
+</app-confirmsignup>
 
 <section id="contact" style="background-image:url('assets/landingpage-assets/img/map-image.png');">
   <div class="container">

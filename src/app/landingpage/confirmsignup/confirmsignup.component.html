@@ -1,0 +1,57 @@
+<div class="container-fluid container-signup-custom">
+  <div class="row">
+    <div class="col col-lg-12 col-xl-12">
+      <div class="login-clean login-clean-custom">
+        <form #confirmsignupform="ngForm">
+          <h3>{{i18n.get('confirm:Confirm Sign up')}}</h3>
+          <div class="form-group">
+            <input class="form-control" type="text"
+            [placeholder]="i18n.get('confirm:email:placeholder')"
+            [formControl]="emailFormControl"
+            name="email" readonly>
+          </div>
+
+          <div class="form-group p-lh-2">
+            <input class="form-control" type="text"
+            [placeholder]="i18n.get('confirm:code:placeholder')"
+            name="code"
+            [formControl]="code" autocomplete="off">
+            <p class="mt-2" *ngIf="code.errors?.required">
+              <small>{{i18n.get('confirm:code:required')}}</small>
+            </p>
+          </div>
+
+          <div class="form-group">
+            <div class="form-row row align-items-center">
+              <div class="col col-lg-12 col-xl-12">
+                <p>
+                  <span>
+                    {{i18n.get('confirm:Lost your code?')}}
+                    <a class="signup-link pl-1" style="cursor: pointer" (click)="onResendSignUp()">{{i18n.get('confirm:Resend Code')}}</a>
+                  </span>
+                </p>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row row align-items-center">
+              <div class="col" *ngIf="buttonStates | async as buttons">
+                <button  *ngIf="buttons==='init'"
+                class="btn btn-primary btn-block mt-0"
+                type="button"
+                (click)="onConfirmSignUp()">{{i18n.get('confirm:COMFIRM')}}</button>
+
+                <button  *ngIf="buttons==='disabled'"
+                class="btn btn-primary btn-block mt-0"
+                type="button"
+                disabled>{{i18n.get('confirm:PLEASE WAIT ...')}}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
