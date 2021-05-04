@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlplataform:'https://logicprofit.trade/'
+  urlplataform:'https://app.logicprofit.trade/'
 };

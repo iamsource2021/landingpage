@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlplataform:'https://logicprofit.trade/'
+  urlplataform:'https://app.logicprofit.trade/'
 };
 
 /*
