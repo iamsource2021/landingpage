@@ -1,0 +1,9 @@
+type AgendarConsultoria @model @auth(rules: [{allow: public}]) {
+  id: ID!  @primaryKey
+  email: String! @index(name: "byStart", sortKeyFields: ["start"])
+  mobile: String!
+  name: String!
+  lifetime: Int!
+  start: AWSDateTime!
+  end: AWSDateTime!
+}
