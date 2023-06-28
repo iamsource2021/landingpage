@@ -1,25 +1,17 @@
 import React, { useState } from "react";
 import {
-  HeroLayout2,
-  Features2x2,
-  Features4x1,
   AgendarConsultoriaCreateForm
 } from './../../ui-components';
 import { 
   View, 
-  Alert, 
-  useTheme, 
+  Alert,
   Flex, 
   Text 
 } from '@aws-amplify/ui-react';
-// import {
-//   Link
-// } from "react-router-dom";
-
 import Wavesocean from './../../Components/Wavesocean/index';
+import './index.css';
 
-function Home(props) {
-  const { tokens } = useTheme();
+function ServiceTransformation(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
     isAlertVisible: false
@@ -34,6 +26,7 @@ function Home(props) {
       isAlertVisible: true
     })
     console.log(fields);
+
   };
 
   const AlertAlias = (props) => {
@@ -52,55 +45,8 @@ function Home(props) {
 
   return (
     <>
-      <View
-        height="auto"
-        width="100%"
-        backgroundColor={"transparent"}
-      >
-        <HeroLayout2 overrides={
-          {
-            HeroLayout2: {
-              width: "100%"              
-            },
-            HeroLayout3: {
-              width: "100%",
-              backgroundColor: "none"
-            },
-            image: { display: "none" }
-          }
-        } />
-        <Wavesocean />
-      </View>
-
-      <View
-        height="auto"
-        width="100%"
-        backgroundColor={tokens.colors.blue[40]}
-      >
-        <Features4x1 overrides={
-          {
-            Features4x1: {
-               width: "100%",
-               backgroundColor:"#efdeec" 
-            }
-          }
-        } />
-      </View>
-      <View
-        height="auto"
-        width="100%"
-        backgroundColor={tokens.colors.blue[40]}
-      >
-        <Features2x2 overrides={
-          {
-            Features2x2: { 
-              width: "100%",
-              backgroundColor:"#f7ebf5" 
-            }
-          }
-        } />
-      </View>
-      <View backgroundColor={'#fff7fe'}>
+      <View         
+        backgroundColor={'transparent'}>
         <Flex
           direction="column"
           justifyContent="center"
@@ -114,8 +60,8 @@ function Home(props) {
             padding={'3rem'} 
             marginTop={'3rem'}
             marginBottom={'3rem'} 
-            backgroundColor={'#ffffff'}
-            boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px" 
+            backgroundColor={'#ffffff'}   
+            boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px"         
           >
             <Text
               fontFamily="Inter"
@@ -160,7 +106,7 @@ function Home(props) {
               whiteSpace="pre-wrap"
               children="Obtén asesoramiento especializado y personalizado para tu empresa. Nuestro equipo de expertos te guiará en la implementación de la transformación digital, identificando oportunidades y diseñando estrategias adaptadas a tus necesidades. ¡Aprovecha esta oportunidad y reserva tu consultoría hoy mismo! Juntos, haremos crecer tu negocio hacia nuevas alturas."
             ></Text>
-            <AgendarConsultoriaCreateForm            
+            <AgendarConsultoriaCreateForm 
               onSubmit={handleOnSubmit}
               overrides={{
                 "name":{
@@ -176,9 +122,14 @@ function Home(props) {
           </View>
         </Flex>        
       </View>  
-
+      <View  
+        width="100%"
+        backgroundColor={"transparent"}
+      >        
+        <Wavesocean />
+      </View>        
     </>
   );
 }
 
-export default Home;
+export default ServiceTransformation;

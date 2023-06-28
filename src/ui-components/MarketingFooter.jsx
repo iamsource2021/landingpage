@@ -352,7 +352,7 @@ export default function MarketingFooter(props) {
           height="unset"
           shrink="0"
           label=""
-          placeholder="Placeholder"
+          placeholder="Suscribirse..."
           size="default"
           isDisabled={false}
           labelHidden={false}

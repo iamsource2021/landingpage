@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "../Home/index";
+import ServiceTransformation from '../ServiceTransformation/index';
 
 import {
     BrowserRouter as Router,
@@ -12,6 +13,7 @@ function Outlet(props){
         <Router>
             <Routes>
                 <Route exact path="/" element={<Home />} />
+                <Route exact path="/servicetransformation" element={<ServiceTransformation />} />
             </Routes>
       </Router>
     );
