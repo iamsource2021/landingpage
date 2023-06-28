@@ -12,9 +12,8 @@ function Outlet(props){
     return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<Home />} >
-                    <Route exact path="servicetransformation" element={<ServiceTransformation />} />    
-                </Route>                
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/servicetransformation" element={<ServiceTransformation />} />
             </Routes>
       </Router>
     );
