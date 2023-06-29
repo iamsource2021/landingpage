@@ -53,6 +53,7 @@ function Home(props) {
   return (
     <>
       <View
+        id="servicios"
         height="auto"
         width="100%"
         backgroundColor={"transparent"}
@@ -76,6 +77,7 @@ function Home(props) {
         height="auto"
         width="100%"
         backgroundColor={tokens.colors.blue[40]}
+        id="casodeuso"
       >
         <Features4x1 overrides={
           {
@@ -90,6 +92,7 @@ function Home(props) {
         height="auto"
         width="100%"
         backgroundColor={tokens.colors.blue[40]}
+        id="recursos"
       >
         <Features2x2 overrides={
           {
@@ -100,7 +103,7 @@ function Home(props) {
           }
         } />
       </View>
-      <View backgroundColor={'#fff7fe'}>
+      <View backgroundColor={'#fff7fe'} id="agendarconsultoria">
         <Flex
           direction="column"
           justifyContent="center"
