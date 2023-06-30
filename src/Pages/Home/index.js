@@ -65,7 +65,12 @@ function Home(props) {
             },
             HeroLayout3: {
               width: "100%",
-              backgroundColor: "none"
+              backgroundColor: "none",
+              overrides:{
+                "Type Lock Up":{
+                  justifyContent:"unset"
+                }
+              }
             },
             image: { display: "none" }
           }

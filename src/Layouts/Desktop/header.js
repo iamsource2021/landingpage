@@ -9,10 +9,10 @@ const theme = {
     components: {
       link: {
         focus: {
-          color: { value: '{colors.purple.40}' },
+          color: { value: '{colors.purple.20}' },
         },
         hover: {
-          color: { value: '{colors.purple.60}' },
+          color: { value: '{colors.purple.40}' },
         },
         visited: {
           color: { value: '{colors.white}' },
