@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import {
-  AgendarConsultoriaCreateForm
-} from './../../ui-components';
+import React from "react";
+
 import { 
-  View, 
-  Alert,
+  View,
   Flex, 
   Text 
 } from '@aws-amplify/ui-react';
@@ -12,36 +9,7 @@ import Wavesocean from './../../Components/Wavesocean/index';
 import './index.css';
 
 function ServiceTransformation(props) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [alertAlias, setAlertAlias] = useState({
-    isAlertVisible: false
-  });
 
-  const handleOnSubmit = async (fields) => {
-    setIsLoading(true);
-    setAlertAlias({
-      variation: 'success',
-      heading: 'Disponible!',
-      content: 'Se envio notificacion',
-      isAlertVisible: true
-    })
-    console.log(fields);
-
-  };
-
-  const AlertAlias = (props) => {
-    return (
-      props.props.isAlertVisible ?
-        <Alert
-          variation={props.props.variation}
-          isDismissible={true}
-          hasIcon={true}
-          heading={props.props.heading}
-        >
-          {props.props.content}
-        </Alert> : null
-    )
-  }
 
   return (
     <>
@@ -56,7 +24,7 @@ function ServiceTransformation(props) {
           gap="0"
         >
           <View 
-            width={'50%'} 
+            width={'80%'} 
             padding={'3rem'} 
             marginTop={'3rem'}
             marginBottom={'3rem'} 
