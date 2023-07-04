@@ -14,15 +14,19 @@ export declare type Features4x1OverridesProps = {
     "Frame 139"?: PrimitiveOverrideProps<FlexProps>;
     "Feature A"?: PrimitiveOverrideProps<TextProps>;
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766581"?: PrimitiveOverrideProps<TextProps>;
+    "Leer Mas...36822689"?: PrimitiveOverrideProps<TextProps>;
     "Frame 140"?: PrimitiveOverrideProps<FlexProps>;
     "Feature B"?: PrimitiveOverrideProps<TextProps>;
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766584"?: PrimitiveOverrideProps<TextProps>;
+    "Leer Mas...36832711"?: PrimitiveOverrideProps<TextProps>;
     "Frame 141"?: PrimitiveOverrideProps<FlexProps>;
     "Feature C"?: PrimitiveOverrideProps<TextProps>;
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766587"?: PrimitiveOverrideProps<TextProps>;
+    "Leer Mas...36832712"?: PrimitiveOverrideProps<TextProps>;
     "Frame 142"?: PrimitiveOverrideProps<FlexProps>;
     "Feature D"?: PrimitiveOverrideProps<TextProps>;
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766590"?: PrimitiveOverrideProps<TextProps>;
+    "Leer Mas...36832713"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type Features4x1Props = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: Features4x1OverridesProps | undefined | null;

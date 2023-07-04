@@ -6,10 +6,21 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
 import { Flex, Text } from "@aws-amplify/ui-react";
 export default function Features2x2(props) {
   const { overrides, ...rest } = props;
+  const frameThreeSevenFourTwoNineSevenSixSixFiveNineFourOnClick =
+    useNavigateAction({ type: "url", url: "/guias" });
+  const frameThreeSevenThreeTwoNineSevenSixSixFiveNineSevenOnClick =
+    useNavigateAction({ type: "url", url: "/webinars" });
+  const frameThreeSevenFourTwoNineSevenSixSixSixZeroOneOnClick =
+    useNavigateAction({ type: "url", url: "/estudiocasos" });
+  const frameThreeSevenThreeTwoNineSevenSixSixSixZeroFourOnClick =
+    useNavigateAction({ type: "url", url: "/ebooks" });
   return (
     <Flex
       gap="0"
@@ -64,6 +75,9 @@ export default function Features2x2(props) {
             position="relative"
             padding="160px 40px 40px 40px"
             backgroundColor="rgba(255,255,255,1)"
+            onClick={() => {
+              frameThreeSevenFourTwoNineSevenSixSixFiveNineFourOnClick();
+            }}
             {...getOverrideProps(overrides, "Frame 37429766594")}
           >
             <Text
@@ -129,6 +143,9 @@ export default function Features2x2(props) {
             position="relative"
             padding="160px 40px 40px 40px"
             backgroundColor="rgba(255,255,255,1)"
+            onClick={() => {
+              frameThreeSevenThreeTwoNineSevenSixSixFiveNineSevenOnClick();
+            }}
             {...getOverrideProps(overrides, "Frame 37329766597")}
           >
             <Text
@@ -208,6 +225,9 @@ export default function Features2x2(props) {
             position="relative"
             padding="160px 40px 40px 40px"
             backgroundColor="rgba(255,255,255,1)"
+            onClick={() => {
+              frameThreeSevenFourTwoNineSevenSixSixSixZeroOneOnClick();
+            }}
             {...getOverrideProps(overrides, "Frame 37429766601")}
           >
             <Text
@@ -273,6 +293,9 @@ export default function Features2x2(props) {
             position="relative"
             padding="160px 40px 40px 40px"
             backgroundColor="rgba(255,255,255,1)"
+            onClick={() => {
+              frameThreeSevenThreeTwoNineSevenSixSixSixZeroFourOnClick();
+            }}
             {...getOverrideProps(overrides, "Frame 37329766604")}
           >
             <Text

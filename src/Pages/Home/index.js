@@ -10,7 +10,9 @@ import {
   Alert, 
   useTheme, 
   Flex, 
-  Text 
+  Text,
+  Link,  
+  ThemeProvider 
 } from '@aws-amplify/ui-react';
 // import {
 //   Link
@@ -18,12 +20,43 @@ import {
 
 import Wavesocean from './../../Components/Wavesocean/index';
 
+const theme = {
+  name: 'link-theme-content',
+  tokens: {
+    components: {
+      link: {
+        focus: {
+          color: { value: '{colors.purple.20}' },
+        },
+        hover: {
+          color: { value: '{colors.purple.40}' },
+        },
+        visited: {
+          color: { value: '{colors.black}' },
+        },
+      },
+    },
+  },
+};
+
 function Home(props) {
   const { tokens } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
     isAlertVisible: false
   });
+
+  const LinkAlias = (props) => {
+    return (
+      <ThemeProvider theme={theme}>
+        <Link 
+          href={props.href}>
+                {props.children}
+        </Link>
+      </ThemeProvider>
+
+    )
+  }
 
   const handleOnSubmit = async (fields) => {
     setIsLoading(true);
@@ -89,7 +122,35 @@ function Home(props) {
             Features4x1: {
                width: "100%",
                backgroundColor:"#efdeec" 
-            }
+            },
+            "Leer Mas...36822689":{
+              children:
+              <LinkAlias 
+                href={'/automatization'} 
+                children={'Leer Mas...'}
+              />
+            },
+            "Leer Mas...36832711":{
+              children:
+              <LinkAlias 
+                href={'/analisis'} 
+                children={'Leer Mas...'}
+              />
+            },
+            "Leer Mas...36832712":{
+              children:
+              <LinkAlias 
+                href={'/colaboracion'} 
+                children={'Leer Mas...'}
+              />
+            },
+            "Leer Mas...36832713":{
+              children:
+              <LinkAlias 
+                href={'/gestion'} 
+                children={'Leer Mas...'}
+              />
+            }            
           }
         } />
       </View>

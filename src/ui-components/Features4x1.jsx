@@ -99,6 +99,28 @@ export default function Features4x1(props) {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766581"
             )}
           ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="12px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Leer Mas..."
+            {...getOverrideProps(overrides, "Leer Mas...36822689")}
+          ></Text>
         </Flex>
         <Flex
           gap="16px"
@@ -161,6 +183,28 @@ export default function Features4x1(props) {
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766584"
             )}
+          ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="12px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Leer Mas..."
+            {...getOverrideProps(overrides, "Leer Mas...36832711")}
           ></Text>
         </Flex>
         <Flex
@@ -225,6 +269,28 @@ export default function Features4x1(props) {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766587"
             )}
           ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="12px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Leer Mas..."
+            {...getOverrideProps(overrides, "Leer Mas...36832712")}
+          ></Text>
         </Flex>
         <Flex
           gap="16px"
@@ -287,6 +353,28 @@ export default function Features4x1(props) {
               overrides,
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.29766590"
             )}
+          ></Text>
+          <Text
+            fontFamily="Inter"
+            fontSize="12px"
+            fontWeight="400"
+            color="rgba(0,0,0,1)"
+            lineHeight="24px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            alignSelf="stretch"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Leer Mas..."
+            {...getOverrideProps(overrides, "Leer Mas...36832713")}
           ></Text>
         </Flex>
       </Flex>
