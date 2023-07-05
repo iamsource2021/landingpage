@@ -5,14 +5,11 @@ import {
   Flex, 
   Text 
 } from '@aws-amplify/ui-react';
-import Wavesocean from './../../Components/Wavesocean/index';
-
 function Colaboracion(props) {
     
   return (
     <>
-      <View         
-        backgroundColor={'transparent'}>
+      <View>
         <Flex
           direction="column"
           justifyContent="center"
@@ -26,8 +23,7 @@ function Colaboracion(props) {
             padding={'3rem'} 
             marginTop={'3rem'}
             marginBottom={'3rem'} 
-            backgroundColor={'#ffffff'}   
-            boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px"         
+            backgroundColor={'#ffffff'}           
           >
             <Text
               fontFamily="Inter"
@@ -35,7 +31,7 @@ function Colaboracion(props) {
               fontWeight="700"
               color="rgba(13,26,38,1)"
               lineHeight="25px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -57,7 +53,7 @@ function Colaboracion(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -80,7 +76,7 @@ function Colaboracion(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -103,7 +99,7 @@ function Colaboracion(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -126,7 +122,7 @@ function Colaboracion(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -149,7 +145,7 @@ function Colaboracion(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -172,7 +168,7 @@ function Colaboracion(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -191,13 +187,7 @@ function Colaboracion(props) {
             ></Text>                                                         
           </View>
         </Flex>        
-      </View>  
-      <View  
-        width="100%"
-        backgroundColor={"transparent"}
-      >        
-        <Wavesocean />
-      </View>        
+      </View>          
     </>
   );
 }

@@ -26,6 +26,7 @@ export default function NavBar(props) {
       justifyContent="center"
       alignItems="center"
       position="relative"
+      boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
       padding="24px 32px 24px 32px"
       backgroundColor="rgba(255,255,255,1)"
       {...getOverrideProps(overrides, "NavBar")}
@@ -45,8 +46,8 @@ export default function NavBar(props) {
         {...getOverrideProps(overrides, "Logo")}
       >
         <Image
-          width="30px"
-          height="30.68px"
+          width="70px"
+          height="41px"
           display="block"
           gap="unset"
           alignItems="unset"
@@ -55,7 +56,6 @@ export default function NavBar(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="/images/logo.png"
           {...getOverrideProps(overrides, "logo 1")}
         ></Image>
       </Flex>
@@ -77,7 +77,7 @@ export default function NavBar(props) {
           fontFamily="Inter"
           fontSize="16px"
           fontWeight="400"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="24px"
           textAlign="left"
           display="block"
@@ -99,7 +99,7 @@ export default function NavBar(props) {
           fontFamily="Inter"
           fontSize="16px"
           fontWeight="400"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="24px"
           textAlign="left"
           display="block"
@@ -121,7 +121,7 @@ export default function NavBar(props) {
           fontFamily="Inter"
           fontSize="16px"
           fontWeight="400"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="24px"
           textAlign="left"
           display="block"
@@ -143,7 +143,7 @@ export default function NavBar(props) {
           fontFamily="Inter"
           fontSize="16px"
           fontWeight="400"
-          color="rgba(255,255,255,1)"
+          color="rgba(0,0,0,1)"
           lineHeight="24px"
           textAlign="left"
           display="block"

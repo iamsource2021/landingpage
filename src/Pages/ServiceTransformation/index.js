@@ -5,16 +5,11 @@ import {
   Flex, 
   Text 
 } from '@aws-amplify/ui-react';
-import Wavesocean from './../../Components/Wavesocean/index';
-import './index.css';
 
 function ServiceTransformation(props) {
-
-
   return (
     <>
-      <View         
-        backgroundColor={'transparent'}>
+      <View>
         <Flex
           direction="column"
           justifyContent="center"
@@ -22,14 +17,13 @@ function ServiceTransformation(props) {
           alignContent="flex-start"
           wrap="nowrap"
           gap="0"
+          backgroundColor={'white'}          
         >
           <View 
             width={'80%'} 
             padding={'3rem'} 
             marginTop={'3rem'}
-            marginBottom={'3rem'} 
-            backgroundColor={'#ffffff'}   
-            boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px"         
+            marginBottom={'3rem'}
           >
             <Text
               fontFamily="Inter"
@@ -37,7 +31,7 @@ function ServiceTransformation(props) {
               fontWeight="700"
               color="rgba(13,26,38,1)"
               lineHeight="25px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -59,7 +53,7 @@ function ServiceTransformation(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -82,7 +76,7 @@ function ServiceTransformation(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -105,7 +99,7 @@ function ServiceTransformation(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -128,7 +122,7 @@ function ServiceTransformation(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -151,7 +145,7 @@ function ServiceTransformation(props) {
               fontWeight="400"
               color="rgba(92,102,112,1)"
               lineHeight="24px"
-              textAlign="left"
+              textAlign="justify"
               display="block"
               direction="column"
               justifyContent="unset"
@@ -172,12 +166,7 @@ function ServiceTransformation(props) {
           </View>
         </Flex>        
       </View>  
-      <View  
-        width="100%"
-        backgroundColor={"transparent"}
-      >        
-        <Wavesocean />
-      </View>        
+     
     </>
   );
 }

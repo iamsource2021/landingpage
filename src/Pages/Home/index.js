@@ -8,39 +8,13 @@ import {
 import { 
   View, 
   Alert, 
-  useTheme, 
   Flex, 
   Text,
-  Link,  
-  ThemeProvider 
+  Link
 } from '@aws-amplify/ui-react';
-// import {
-//   Link
-// } from "react-router-dom";
 
-import Wavesocean from './../../Components/Wavesocean/index';
-
-const theme = {
-  name: 'link-theme-content',
-  tokens: {
-    components: {
-      link: {
-        focus: {
-          color: { value: '{colors.purple.20}' },
-        },
-        hover: {
-          color: { value: '{colors.purple.40}' },
-        },
-        visited: {
-          color: { value: '{colors.black}' },
-        },
-      },
-    },
-  },
-};
 
 function Home(props) {
-  const { tokens } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
     isAlertVisible: false
@@ -48,12 +22,10 @@ function Home(props) {
 
   const LinkAlias = (props) => {
     return (
-      <ThemeProvider theme={theme}>
         <Link 
           href={props.href}>
                 {props.children}
         </Link>
-      </ThemeProvider>
 
     )
   }
@@ -89,16 +61,14 @@ function Home(props) {
         id="servicios"
         height="auto"
         width="100%"
-        backgroundColor={"transparent"}
       >
-        <HeroLayout2 overrides={
+        <HeroLayout2 backgroundColor="#ffffff" overrides={
           {
             HeroLayout2: {
-              width: "100%"              
+              width: "100%"           
             },
             HeroLayout3: {
-              width: "100%",
-              backgroundColor: "none",
+              width: "100%",              
               overrides:{
                 "Type Lock Up":{
                   justifyContent:"unset"
@@ -108,20 +78,17 @@ function Home(props) {
             image: { display: "none" }
           }
         } />
-        <Wavesocean />
       </View>
 
       <View
         height="auto"
         width="100%"
-        backgroundColor={tokens.colors.blue[40]}
         id="casodeuso"
       >
         <Features4x1 overrides={
           {
             Features4x1: {
                width: "100%",
-               backgroundColor:"#efdeec" 
             },
             "Leer Mas...36822689":{
               children:
@@ -157,19 +124,17 @@ function Home(props) {
       <View
         height="auto"
         width="100%"
-        backgroundColor={tokens.colors.blue[40]}
         id="recursos"
       >
         <Features2x2 overrides={
           {
             Features2x2: { 
               width: "100%",
-              backgroundColor:"#f7ebf5" 
             }
           }
         } />
       </View>
-      <View backgroundColor={'#fff7fe'} id="agendarconsultoria">
+      <View id="agendarconsultoria">
         <Flex
           direction="column"
           justifyContent="center"
@@ -183,14 +148,12 @@ function Home(props) {
             padding={'3rem'} 
             marginTop={'3rem'}
             marginBottom={'3rem'} 
-            backgroundColor={'#ffffff'}
             boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px" 
           >
             <Text
               fontFamily="Inter"
               fontSize="20px"
-              fontWeight="700"
-              color="rgba(13,26,38,1)"
+              fontWeight="700"              
               lineHeight="25px"
               textAlign="left"
               display="block"
