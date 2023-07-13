@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["kinesis:PutRecord", "kinesis:PutRecords"],
+    "Resource": ["*"]
+  }
+]

@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "landingpageKinesis": {
+      "providerPlugin": "awscloudformation",
+      "service": "Kinesis"
+    }
+  },
   "api": {
     "landingpage": {
       "dependsOn": [],
@@ -20,6 +26,58 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    }
+  },
+  "auth": {
+    "landingpage": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaTypes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": []
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "landingpageb089cc1b": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "kinesisStreamArn"
+          ],
+          "category": "analytics",
+          "resourceName": "landingpageKinesis"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_landingpageb089cc1b_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "landingpageb089cc1b"
+        }
+      ]
+    },
+    "AMPLIFY_function_landingpageb089cc1b_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "landingpageb089cc1b"
+        }
+      ]
     }
   }
 }

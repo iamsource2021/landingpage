@@ -10,9 +10,11 @@ import {
   Alert, 
   Flex, 
   Text,
-  Link
+  Link,
 } from '@aws-amplify/ui-react';
 
+import { Analytics, AWSKinesisProvider } from 'aws-amplify';
+Analytics.addPluggable(new AWSKinesisProvider());
 
 function Home(props) {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +31,18 @@ function Home(props) {
 
     )
   }
+
+  const handleOnAnalitics =  async (event)=>{
+    console.log(event);
+    // Analytics.record(
+    //   {
+    //     data: event,
+    //     partitionKey: 'myPartitionKey',
+    //     streamName: 'myKinesisStream'
+    //   },
+    //   'AWSKinesis'
+    // );
+}
 
   const handleOnSubmit = async (fields) => {
     setIsLoading(true);
@@ -71,7 +85,12 @@ function Home(props) {
               width: "100%",              
               overrides:{
                 "Type Lock Up":{
-                  justifyContent:"unset"
+                  justifyContent:"unset",
+                  children:{
+                    Button:{
+                      onClick:{handleOnAnalitics}
+                    }
+                  }
                 }
               }
             },

@@ -1,0 +1,12 @@
+{
+  "kinesisStreamName": "landingpageKinesis",
+  "kinesisStreamShardCount": 1,
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authPolicyName": "kinesis_amplify_798c720b",
+  "unauthPolicyName": "kinesis_amplify_798c720b"
+}

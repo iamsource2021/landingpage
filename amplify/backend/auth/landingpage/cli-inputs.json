@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "landingpage_identitypool_9d91a87f",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "landingpage",
+    "sharedId": "9d91a87f",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

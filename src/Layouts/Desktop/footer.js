@@ -56,6 +56,34 @@ function Footer(props) {
                             href={'/analisis'} 
                             children={'Artículo destacado'}
                         />
+                    },
+                    "Lorem ipsum dolor sit amet29766996":{
+                        children:
+                        <LinkAlias 
+                            href={'/recursos'} 
+                            children={'Recursos de automatización'}
+                        />
+                    },
+                    "Consectetur adipiscing29766997":{
+                        children:
+                        <LinkAlias 
+                            href={'/plantillas'} 
+                            children={'Plantillas y herramientas'}
+                        />                        
+                    },
+                    "Elit sed do eiusmod29766998":{
+                        children:
+                        <LinkAlias 
+                            href={'/infografia'} 
+                            children={'Infografía informativa'}
+                        />                            
+                    },
+                    "Lorem ipsum dolor sit amet 2021":{
+                        children:
+                        <LinkAlias 
+                            href={'/infografia'} 
+                            children={'© 2023 Eduardooa. Todos los derechos reservados.'}
+                        />                        
                     }
                 }
             } />
