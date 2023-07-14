@@ -20,8 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "REACT_APP_ENV=dev react-scripts start",
-    "build": "REACT_APP_ENV=prod react-scripts build",
+    "start": "react-scripts start",
+    "build": "PUBLIC_URL=https://main.d3km1d4sco20x8.amplifyapp.com react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
