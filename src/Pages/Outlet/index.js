@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Home from "../Home/index";
 import ServiceTransformation from '../ServiceTransformation/index';
 import Automatization from "../Automatization/index";
@@ -9,7 +9,7 @@ import Guias from "../Guias";
 import Webinars from "../Webinars";
 import Estudiocasos from "../Estudiocasos";
 import Ebooks from "../Ebooks";
-
+import useGoogleAnalytics from '../../hooks/useGoogleAnalytics';
 
 import {
   BrowserRouter as Router,
@@ -18,6 +18,13 @@ import {
 } from 'react-router-dom';
 
 function Outlet(props) {
+
+  const { trackPageView } = useGoogleAnalytics();
+
+  useEffect(() => {
+    trackPageView(window.location.pathname + window.location.search);
+  }, [trackPageView]);
+
   return (
     <Router>
       <Routes>

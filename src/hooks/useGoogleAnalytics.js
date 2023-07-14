@@ -1,21 +1,21 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import ReactGA from 'react-ga';
 
 const useGoogleAnalytics = () => {
-  useEffect(() => {
-    const trackingId = "G-4BDDNC0KG3";
-    ReactGA.initialize(
-        trackingId,
-        {
-            debug: false,
-            testMode: false
-        }
-    );
+  // useEffect(() => {
+  //   const trackingId = "G-4BDDNC0KG3";
+  //   ReactGA.initialize(
+  //       trackingId,
+  //       {
+  //           debug: true,
+  //           testMode: false
+  //       }
+  //   );
 
-    return () => {
-      // Realiza alguna limpieza, si es necesario
-    };
-  }, []);
+  //   return () => {
+  //     // Realiza alguna limpieza, si es necesario
+  //   };
+  // }, []);
 
   const trackPageView = (path) => {
     ReactGA.set({ page: path });
