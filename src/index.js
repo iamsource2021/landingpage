@@ -11,7 +11,7 @@ import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
 ReactGA.initialize(
-  "G-4BDDNC0KG3",
+  "G-7VDW2XTREJ",
     {
         debug: false,
         testMode: false
