@@ -35,7 +35,7 @@ function Home(props) {
 
   const handleOnAnalitics =  async (event)=>{
     console.log(event);
-    trackEvent('Botón', 'Clic', 'Botón de ejemplo');
+    trackEvent('eventButton', 'onClick', 'Home');
   }
 
   const handleOnSubmit = async (fields) => {
