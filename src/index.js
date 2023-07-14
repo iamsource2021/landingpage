@@ -13,7 +13,7 @@ Amplify.configure(awsExports);
 ReactGA.initialize(
   "G-4BDDNC0KG3",
     {
-        debug: true,
+        debug: false,
         testMode: false
     }
 );
