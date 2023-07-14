@@ -7,7 +7,7 @@ const useGoogleAnalytics = () => {
     ReactGA.initialize(
         trackingId,
         {
-            debug: true,
+            debug: false,
             testMode: false
         }
     );
