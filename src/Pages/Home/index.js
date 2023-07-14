@@ -12,10 +12,12 @@ import {
   Text,
   Link,
 } from '@aws-amplify/ui-react';
+import useGoogleAnalytics from './../../hooks/useGoogleAnalytics';
 
-import { Analytics } from 'aws-amplify';
 
 function Home(props) {
+  const { trackEvent } = useGoogleAnalytics();
+
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
     isAlertVisible: false
@@ -33,27 +35,8 @@ function Home(props) {
 
   const handleOnAnalitics =  async (event)=>{
     console.log(event);
-    const now = new Date();
-    const data = {
-      id: now.getTime(),
-      action: 'Add Button',
-      component: 'Button',
-      user: 'the username of user',
-      source: 'Web',
-    };
-  
-    try {
-      console.log(process.env);
-      await Analytics.record({
-        data: data,
-        streamName: 'landingpageKinesis-'+ process.env.REACT_APP_ENV
-      }, 'AWSKinesis');
-
-    } catch (error) {
-      console.log(error);
-    }
-
-}
+    trackEvent('Botón', 'Clic', 'Botón de ejemplo');
+  }
 
   const handleOnSubmit = async (fields) => {
     setIsLoading(true);
