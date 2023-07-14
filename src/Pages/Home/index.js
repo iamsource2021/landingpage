@@ -13,8 +13,7 @@ import {
   Link,
 } from '@aws-amplify/ui-react';
 
-import { Analytics, AWSKinesisProvider } from 'aws-amplify';
-Analytics.addPluggable(new AWSKinesisProvider());
+import { Analytics } from 'aws-amplify';
 
 function Home(props) {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,14 +33,26 @@ function Home(props) {
 
   const handleOnAnalitics =  async (event)=>{
     console.log(event);
-    // Analytics.record(
-    //   {
-    //     data: event,
-    //     partitionKey: 'myPartitionKey',
-    //     streamName: 'myKinesisStream'
-    //   },
-    //   'AWSKinesis'
-    // );
+    const now = new Date();
+    const data = {
+      id: now.getTime(),
+      action: 'Add Button',
+      component: 'Button',
+      user: 'the username of user',
+      source: 'Web',
+    };
+  
+    try {
+      console.log(process.env);
+      await Analytics.record({
+        data: data,
+        streamName: 'landingpageKinesis-'+ process.env.REACT_APP_ENV
+      }, 'AWSKinesis');
+
+    } catch (error) {
+      console.log(error);
+    }
+
 }
 
   const handleOnSubmit = async (fields) => {
@@ -86,15 +97,14 @@ function Home(props) {
               overrides:{
                 "Type Lock Up":{
                   justifyContent:"unset",
-                  children:{
-                    Button:{
-                      onClick:{handleOnAnalitics}
-                    }
-                  }
+                },
+                Button:{
+                  onClick:handleOnAnalitics
                 }
               }
             },
-            image: { display: "none" }
+            image: { display: "none" },
+            
           }
         } />
       </View>

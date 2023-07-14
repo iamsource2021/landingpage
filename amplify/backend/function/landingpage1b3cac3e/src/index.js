@@ -1,4 +1,8 @@
-
+/* Amplify Params - DO NOT EDIT
+	ANALYTICS_LANDINGPAGEKINESIS_KINESISSTREAMARN
+	ENV
+	REGION
+Amplify Params - DO NOT EDIT */
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}

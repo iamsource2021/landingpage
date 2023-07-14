@@ -5,9 +5,31 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@aws-amplify/ui-react/styles.css';
 import { ThemeProvider } from '@aws-amplify/ui-react';
-import { Amplify } from 'aws-amplify';
+import { Amplify,Analytics, AWSKinesisProvider } from 'aws-amplify';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
+
+Analytics.addPluggable(new AWSKinesisProvider());
+
+// Configure the plugin after adding it to the Analytics module
+Analytics.configure({
+  AWSKinesis: {
+    // OPTIONAL -  Amazon Kinesis service region
+    region: awsExports.aws_project_region,
+
+    // OPTIONAL - The buffer size for events in number of items.
+    bufferSize: 1000,
+
+    // OPTIONAL - The number of events to be deleted from the buffer when flushed.
+    flushSize: 100,
+
+    // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
+    flushInterval: 5000, // 5s
+
+    // OPTIONAL - The limit for failed recording retries.
+    resendLimit: 5
+  }
+});
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

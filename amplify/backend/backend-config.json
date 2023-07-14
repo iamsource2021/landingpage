@@ -32,14 +32,22 @@
     "landingpage": {
       "dependsOn": [],
       "frontendAuthConfig": {
-        "mfaTypes": [],
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": []
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
         },
-        "signupAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
         "socialProviders": [],
         "usernameAttributes": [],
-        "verificationMechanisms": []
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito",
@@ -47,7 +55,7 @@
     }
   },
   "function": {
-    "landingpageb089cc1b": {
+    "landingpage1b3cac3e": {
       "build": true,
       "dependsOn": [
         {
@@ -63,19 +71,19 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_landingpageb089cc1b_deploymentBucketName": {
+    "AMPLIFY_function_landingpage1b3cac3e_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "landingpageb089cc1b"
+          "resourceName": "landingpage1b3cac3e"
         }
       ]
     },
-    "AMPLIFY_function_landingpageb089cc1b_s3Key": {
+    "AMPLIFY_function_landingpage1b3cac3e_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "landingpageb089cc1b"
+          "resourceName": "landingpage1b3cac3e"
         }
       ]
     }

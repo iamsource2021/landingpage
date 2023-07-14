@@ -51,12 +51,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "landingpageb089cc1b",
+            "landingpage1b3cac3e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "landingpageb089cc1b",
+                  "landingpage1b3cac3e",
                   "-",
                   {
                     "Ref": "env"
@@ -73,6 +73,9 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "ANALYTICS_LANDINGPAGEKINESIS_KINESISSTREAMARN": {
+              "Ref": "analyticslandingpageKinesiskinesisStreamArn"
             }
           }
         },
@@ -93,12 +96,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "landingpageLambdaRoledd30d240",
+            "landingpageLambdaRole23365328",
             {
               "Fn::Join": [
                 "",
                 [
-                  "landingpageLambdaRoledd30d240",
+                  "landingpageLambdaRole23365328",
                   "-",
                   {
                     "Ref": "env"
@@ -163,6 +166,60 @@
                     }
                   }
                 ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "kinesis:CreateStream",
+                "kinesis:RegisterStreamConsumer",
+                "kinesis:AddTagsToStream",
+                "kinesis:ListShards",
+                "kinesis:ListStreams",
+                "kinesis:ListStreamConsumers",
+                "kinesis:DescribeStream",
+                "kinesis:DescribeStreamSummary",
+                "kinesis:DescribeStreamConsumer",
+                "kinesis:GetRecords",
+                "kinesis:GetShardIterator",
+                "kinesis:SubscribeToShard",
+                "kinesis:DescribeLimits",
+                "kinesis:ListTagsForStream",
+                "kinesis:SubscribeToShard",
+                "kinesis:EnableEnhancedMonitoring",
+                "kinesis:DisableEnhancedMonitoring",
+                "kinesis:IncreaseStreamRetentionPeriod",
+                "kinesis:DecreaseStreamRetentionPeriod",
+                "kinesis:MergeShards",
+                "kinesis:PutRecord",
+                "kinesis:PutRecords",
+                "kinesis:SplitShard",
+                "kinesis:UpdateShardCount",
+                "kinesis:DeleteStream",
+                "kinesis:DeregisterStreamConsumer",
+                "kinesis:RemoveTagsFromStream"
+              ],
+              "Resource": {
+                "Ref": "analyticslandingpageKinesiskinesisStreamArn"
               }
             }
           ]
