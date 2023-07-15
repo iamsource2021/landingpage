@@ -9,7 +9,7 @@ import Guias from "../Guias";
 import Webinars from "../Webinars";
 import Estudiocasos from "../Estudiocasos";
 import Ebooks from "../Ebooks";
-import useGoogleAnalytics from '../../GA';
+import GA from '../../GA';
 
 import {
   BrowserRouter as Router,
@@ -19,7 +19,7 @@ import {
 
 function Outlet(props) {
 
-  const { trackPageView } = useGoogleAnalytics();
+  const { trackPageView } = GA();
 
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);

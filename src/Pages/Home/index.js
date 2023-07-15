@@ -12,11 +12,11 @@ import {
   Text,
   Link,
 } from '@aws-amplify/ui-react';
-import useGoogleAnalytics from '../../GA';
+import GA from '../../GA';
 
 
 function Home(props) {
-  const { trackEvent } = useGoogleAnalytics();
+  const { trackEvent } = GA();
 
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
