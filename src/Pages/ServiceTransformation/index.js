@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { 
   View,
@@ -7,6 +7,10 @@ import {
 } from '@aws-amplify/ui-react';
 
 function ServiceTransformation(props) {
+  useEffect(() => {
+    document.title = "ServiceTransformation"
+  }, []);
+
   return (
     <>
       <View>

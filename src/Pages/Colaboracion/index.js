@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { 
   View, 
@@ -6,7 +6,11 @@ import {
   Text 
 } from '@aws-amplify/ui-react';
 function Colaboracion(props) {
-    
+
+  useEffect(() => {
+    document.title = "Colaboracion"
+  }, []);
+
   return (
     <>
       <View>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { 
   View, 
@@ -7,7 +7,10 @@ import {
 } from '@aws-amplify/ui-react';
 
 function Gestion(props) {
-    
+  useEffect(() => {
+    document.title = "Gestion"
+  }, []);
+
   return (
     <>
       <View >

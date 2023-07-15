@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { 
   View, 
@@ -7,7 +7,10 @@ import {
 } from '@aws-amplify/ui-react';
 
 function Webinars(props) {
-    
+  useEffect(() => {
+    document.title = "Webinars"
+  }, []);
+
   return (
     <>
       <View>

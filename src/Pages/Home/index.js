@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   HeroLayout2,
   Features2x2,
   Features4x1,
   AgendarConsultoriaCreateForm
 } from './../../ui-components';
-import { 
-  View, 
-  Alert, 
-  Flex, 
+import {
+  View,
+  Alert,
+  Flex,
   Text,
   Link,
 } from '@aws-amplify/ui-react';
@@ -17,25 +17,28 @@ import GA from '../../GA';
 
 function Home(props) {
   const { trackEvent } = GA();
-
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
     isAlertVisible: false
   });
 
+  useEffect(() => {
+    document.title = "Home"
+  }, []);
+
   const LinkAlias = (props) => {
     return (
-        <Link 
-          href={props.href}>
-                {props.children}
-        </Link>
+      <Link
+        href={props.href}>
+        {props.children}
+      </Link>
 
     )
   }
 
-  const handleOnAnalitics =  async (event)=>{
+  const handleOnAnalitics = async (event) => {
     console.log(event);
-    trackEvent('eventButton', 'onClick', 'Home');
+    trackEvent('eventButton', 'onClick', document.title);
   }
 
   const handleOnSubmit = async (fields) => {
@@ -73,21 +76,21 @@ function Home(props) {
         <HeroLayout2 backgroundColor="#ffffff" overrides={
           {
             HeroLayout2: {
-              width: "100%"           
+              width: "100%"
             },
             HeroLayout3: {
-              width: "100%",              
-              overrides:{
-                "Type Lock Up":{
-                  justifyContent:"unset",
+              width: "100%",
+              overrides: {
+                "Type Lock Up": {
+                  justifyContent: "unset",
                 },
-                Button:{
-                  onClick:handleOnAnalitics
+                Button: {
+                  onClick: handleOnAnalitics
                 }
               }
             },
             image: { display: "none" },
-            
+
           }
         } />
       </View>
@@ -100,36 +103,36 @@ function Home(props) {
         <Features4x1 overrides={
           {
             Features4x1: {
-               width: "100%",
+              width: "100%",
             },
-            "Leer Mas...36822689":{
+            "Leer Mas...36822689": {
               children:
-              <LinkAlias 
-                href={'/automatization'} 
-                children={'Leer Mas...'}
-              />
+                <LinkAlias
+                  href={'/automatization'}
+                  children={'Leer Mas...'}
+                />
             },
-            "Leer Mas...36832711":{
+            "Leer Mas...36832711": {
               children:
-              <LinkAlias 
-                href={'/analisis'} 
-                children={'Leer Mas...'}
-              />
+                <LinkAlias
+                  href={'/analisis'}
+                  children={'Leer Mas...'}
+                />
             },
-            "Leer Mas...36832712":{
+            "Leer Mas...36832712": {
               children:
-              <LinkAlias 
-                href={'/colaboracion'} 
-                children={'Leer Mas...'}
-              />
+                <LinkAlias
+                  href={'/colaboracion'}
+                  children={'Leer Mas...'}
+                />
             },
-            "Leer Mas...36832713":{
+            "Leer Mas...36832713": {
               children:
-              <LinkAlias 
-                href={'/gestion'} 
-                children={'Leer Mas...'}
-              />
-            }            
+                <LinkAlias
+                  href={'/gestion'}
+                  children={'Leer Mas...'}
+                />
+            }
           }
         } />
       </View>
@@ -140,7 +143,7 @@ function Home(props) {
       >
         <Features2x2 overrides={
           {
-            Features2x2: { 
+            Features2x2: {
               width: "100%",
             }
           }
@@ -155,17 +158,17 @@ function Home(props) {
           wrap="nowrap"
           gap="0"
         >
-          <View 
-            width={'50%'} 
-            padding={'3rem'} 
+          <View
+            width={'50%'}
+            padding={'3rem'}
             marginTop={'3rem'}
-            marginBottom={'3rem'} 
-            boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px" 
+            marginBottom={'3rem'}
+            boxShadow="rgba(13, 26, 38, 0.25) 0px 4px 12px 0px"
           >
             <Text
               fontFamily="Inter"
               fontSize="20px"
-              fontWeight="700"              
+              fontWeight="700"
               lineHeight="25px"
               textAlign="left"
               display="block"
@@ -204,11 +207,11 @@ function Home(props) {
               whiteSpace="pre-wrap"
               children="Obtén asesoramiento especializado y personalizado para tu empresa. Nuestro equipo de expertos te guiará en la implementación de la transformación digital, identificando oportunidades y diseñando estrategias adaptadas a tus necesidades. ¡Aprovecha esta oportunidad y reserva tu consultoría hoy mismo! Juntos, haremos crecer tu negocio hacia nuevas alturas."
             ></Text>
-            <AgendarConsultoriaCreateForm            
+            <AgendarConsultoriaCreateForm
               onSubmit={handleOnSubmit}
               overrides={{
-                "name":{
-                  color:"black"
+                "name": {
+                  color: "black"
                 },
                 "SubmitButton": {
                   isLoading: isLoading,
@@ -218,8 +221,8 @@ function Home(props) {
             />
             <AlertAlias props={alertAlias} />
           </View>
-        </Flex>        
-      </View>  
+        </Flex>
+      </View>
 
     </>
   );
