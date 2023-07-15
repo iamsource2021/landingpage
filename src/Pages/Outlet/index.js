@@ -9,7 +9,7 @@ import Guias from "../Guias";
 import Webinars from "../Webinars";
 import Estudiocasos from "../Estudiocasos";
 import Ebooks from "../Ebooks";
-import useGoogleAnalytics from '../../hooks/useGoogleAnalytics';
+import useGoogleAnalytics from '../../GA';
 
 import {
   BrowserRouter as Router,

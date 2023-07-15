@@ -12,7 +12,7 @@ import {
   Text,
   Link,
 } from '@aws-amplify/ui-react';
-import useGoogleAnalytics from './../../hooks/useGoogleAnalytics';
+import useGoogleAnalytics from '../../GA';
 
 
 function Home(props) {

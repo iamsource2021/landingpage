@@ -2,21 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import ReactGA from 'react-ga';
+import GA from './GA';
 import reportWebVitals from './reportWebVitals';
 import '@aws-amplify/ui-react/styles.css';
 import { ThemeProvider } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
-Amplify.configure(awsExports);
 
-ReactGA.initialize(
-  "G-7VDW2XTREJ",
-    {
-        debug: true,
-        testMode: true
-    }
-);
+Amplify.configure(awsExports);
+GA().trackInit();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
