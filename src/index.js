@@ -13,8 +13,8 @@ Amplify.configure(awsExports);
 ReactGA.initialize(
   "G-7VDW2XTREJ",
     {
-        debug: false,
-        testMode: false
+        debug: true,
+        testMode: true
     }
 );
 
