@@ -8,7 +8,7 @@ import {
 
 function Automatization(props) {
   useEffect(() => {
-    document.title = "Automatization"
+    document.title = "Automatización de procesos"
   }, []);
 
   return (

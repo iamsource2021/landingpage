@@ -8,7 +8,7 @@ import {
 
 function Ebooks(props) {
   useEffect(() => {
-    document.title = "Ebooks"
+    document.title = "Ebooks especializados"
   }, []);    
   return (
     <>

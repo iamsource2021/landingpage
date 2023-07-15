@@ -8,7 +8,7 @@ import {
 function Colaboracion(props) {
 
   useEffect(() => {
-    document.title = "Colaboracion"
+    document.title = "Colaboración en la nube"
   }, []);
 
   return (

@@ -8,7 +8,7 @@ import {
 
 function Estudiocasos(props) {
   useEffect(() => {
-    document.title = "Estudiocasos"
+    document.title = "Estudios de caso"
   }, []);
       
   return (

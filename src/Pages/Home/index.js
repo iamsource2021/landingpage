@@ -23,7 +23,7 @@ function Home(props) {
   });
 
   useEffect(() => {
-    document.title = "Home"
+    document.title = "Home - Agendar Consultoría Personalizada"
   }, []);
 
   const LinkAlias = (props) => {

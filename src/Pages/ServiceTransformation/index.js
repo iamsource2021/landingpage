@@ -8,7 +8,7 @@ import {
 
 function ServiceTransformation(props) {
   useEffect(() => {
-    document.title = "ServiceTransformation"
+    document.title = "Agendar Consultoría Personalizada"
   }, []);
 
   return (

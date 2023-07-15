@@ -8,7 +8,7 @@ import {
 
 function Webinars(props) {
   useEffect(() => {
-    document.title = "Webinars"
+    document.title = "Webinars informativos"
   }, []);
 
   return (

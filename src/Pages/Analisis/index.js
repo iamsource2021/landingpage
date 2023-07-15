@@ -9,7 +9,7 @@ import {
 function Analisis(props) {
 
   useEffect(() => {
-    document.title = "Analisis"
+    document.title = "Análisis de datos en tiempo real"
   }, []);
 
   return (

@@ -8,7 +8,7 @@ import {
 
 function Gestion(props) {
   useEffect(() => {
-    document.title = "Gestion"
+    document.title = "Gestión de clientes"
   }, []);
 
   return (
