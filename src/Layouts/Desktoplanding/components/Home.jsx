@@ -12,14 +12,14 @@ import {
   Text,
   Link,
 } from '@aws-amplify/ui-react';
-import GA from './../../../GA';
+// import GA from './../../../GA';
 
 import {
   useNavigate
 } from 'react-router-dom';
 
 export function Home(props) {
-  const { trackEvent } = GA();
+  // const { trackEvent } = GA();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [alertAlias, setAlertAlias] = useState({
@@ -31,8 +31,8 @@ export function Home(props) {
   }, []);
 
   const handleOnAnalitics = async (event) => {
-    console.log("EVENT::",document.title);    
-    trackEvent('eventButton', 'onClick', document.title);
+    // console.log("EVENT::",document.title);    
+    // trackEvent('eventButton', 'onClick', document.title);
     navigate('/servicetransformation');
   }
 

@@ -13,7 +13,6 @@ export function ServiceTransformation(props) {
 
   useEffect(() => {
     document.title = "Agendar Consultoría Personalizada"
-    trackEvent('consultoriainit', 'onClick test1', 'label test1');
   }, [trackEvent]);
 
 
@@ -175,11 +174,18 @@ export function ServiceTransformation(props) {
             ></Text>  
             <Button
               loadingText=""
-              onClick={() => trackEvent('consultoriatest2', 'onClick test2', 'label test12')}
+              onClick={() => trackEvent('compra_cuantiosa', 'page_location', document.location)}
               ariaLabel=""
             >
-              Continuar
-            </Button>                              
+              Compra Cuantiosa
+            </Button>   
+            <Button
+              loadingText=""
+              onClick={() => trackEvent('compra_minima', 'page_location', document.location)}
+              ariaLabel=""
+            >
+              Compra Minima
+            </Button>                                        
           </View>
         </Flex>        
       </View>  

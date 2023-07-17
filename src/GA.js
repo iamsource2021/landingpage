@@ -14,7 +14,7 @@ const GA = () => {
 
   const trackInit = () => {
 
-    ReactGA.initialize(
+    return ReactGA.initialize(
       config.trackId,
       GA_ENV
     );
@@ -22,11 +22,11 @@ const GA = () => {
 
   const trackPageView = (path) => {
     ReactGA.set({ page: path });
-    ReactGA.pageview(path);
+    return ReactGA.pageview(path);
   };
 
   const trackEvent = (category, action, label) => {
-    ReactGA.event({ category, action, label });
+    return ReactGA.event({ category, action, label });
   };
 
   return { trackPageView, trackEvent, trackInit };
