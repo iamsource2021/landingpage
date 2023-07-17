@@ -5,11 +5,17 @@ import {
   Flex, 
   Text 
 } from '@aws-amplify/ui-react';
+import GA from './../../../GA';
 
 export function ServiceTransformation(props) {
+  const { trackEvent } = GA();
+
   useEffect(() => {
     document.title = "Agendar Consultoría Personalizada"
-  }, []);
+    trackEvent('eventButton', 'onClick', document.title);
+  }, [trackEvent]);
+
+
 
   return (
     <>

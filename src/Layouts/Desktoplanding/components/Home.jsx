@@ -31,9 +31,9 @@ export function Home(props) {
   }, []);
 
   const handleOnAnalitics = async (event) => {
-    console.log(event);
-    navigate('/servicetransformation');
+    console.log("EVENT::",document.title);    
     trackEvent('eventButton', 'onClick', document.title);
+    navigate('/servicetransformation');
   }
 
   const handleOnSubmit = async (fields) => {
