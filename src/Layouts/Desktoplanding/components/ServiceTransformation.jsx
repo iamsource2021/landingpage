@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import { 
   View,
   Flex, 
-  Text 
+  Text,
+  Button 
 } from '@aws-amplify/ui-react';
 import GA from './../../../GA';
 
@@ -12,7 +13,7 @@ export function ServiceTransformation(props) {
 
   useEffect(() => {
     document.title = "Agendar Consultoría Personalizada"
-    trackEvent('eventButton', 'onClick', document.title);
+    trackEvent('consultoriainit', 'onClick test1', 'label test1');
   }, [trackEvent]);
 
 
@@ -172,7 +173,13 @@ export function ServiceTransformation(props) {
               marginBottom="1rem"
               children="La transformación digital no se trata solo de implementar nuevas tecnologías, sino también de fomentar una cultura de cambio y adaptabilidad en toda la organización. Nuestra solución está diseñada para facilitar este cambio, brindando capacitación y soporte continuos para garantizar una transición suave y exitosa."
             ></Text>  
-                                          
+            <Button
+              loadingText=""
+              onClick={() => trackEvent('consultoriatest2', 'onClick test2', 'label test12')}
+              ariaLabel=""
+            >
+              Continuar
+            </Button>                              
           </View>
         </Flex>        
       </View>  
