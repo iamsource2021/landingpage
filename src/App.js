@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Desktop from './Layouts/Desktop/index';
+import Desktoplanding from './Layouts/Desktoplanding/index';
 
 function App() {
   return (
     <div className="App">
-      <Desktop/>
+      <Desktoplanding/>
     </div>
   );
 }
