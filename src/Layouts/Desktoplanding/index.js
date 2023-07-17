@@ -12,7 +12,7 @@ import { Estudiocasos } from './components/Estudiocasos';
 import { Ebooks } from './components/Ebooks';
 import { ScrollToTopOnNavigate } from './components/ScrollToTopOnNavigate';
 import { AnimatedRoute } from './components/AnimatedRoute';
-
+import GA from './../../GA';
 import {
   Outlet,
   BrowserRouter,
@@ -21,7 +21,7 @@ import {
   useNavigate
 } from 'react-router-dom';
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { NavBar, MarketingFooter } from './../../ui-components';
 
 const LinkAlias = (props) => {
@@ -109,7 +109,12 @@ function Footer(props) {
 }
 
 function Layout(props, ref) {
+  const { trackPageView } = GA();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    trackPageView(window.location.pathname + window.location.search);
+  }, [trackPageView]);
 
   return (
     <>

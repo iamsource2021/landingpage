@@ -32,6 +32,7 @@ export function Home(props) {
 
   const handleOnAnalitics = async (event) => {
     console.log(event);
+    navigate('/servicetransformation');
     trackEvent('eventButton', 'onClick', document.title);
   }
 
