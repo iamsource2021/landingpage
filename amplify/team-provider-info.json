@@ -14,18 +14,6 @@
     "categories": {
       "api": {
         "landingpage": {}
-      },
-      "auth": {
-        "landingpage": {}
-      },
-      "function": {
-        "landingpage1b3cac3e": {
-          "deploymentBucketName": "amplify-landingpage-dev-150001-deployment",
-          "s3Key": "amplify-builds/landingpage1b3cac3e-3970352f444f77776a6f-build.zip"
-        }
-      },
-      "analytics": {
-        "landingpageKinesis": {}
       }
     }
   }

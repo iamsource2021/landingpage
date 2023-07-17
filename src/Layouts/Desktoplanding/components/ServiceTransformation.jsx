@@ -20,14 +20,14 @@ export function ServiceTransformation(props) {
           alignItems="center"
           alignContent="flex-start"
           wrap="nowrap"
-          gap="0"
-          backgroundColor={'white'}          
+          gap="0"       
         >
           <View 
             width={'80%'} 
             padding={'3rem'} 
             marginTop={'3rem'}
-            marginBottom={'3rem'}
+            marginBottom={'3rem'} 
+            backgroundColor={'#ffffff'}   
           >
             <Text
               fontFamily="Inter"
