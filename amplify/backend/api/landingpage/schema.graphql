@@ -7,3 +7,25 @@ type AgendarConsultoria @model @auth(rules: [{allow: public}]) {
   start: AWSDateTime!
   end: AWSDateTime!
 }
+
+type Contents @model @auth(rules: [{allow: public}]) {
+   id: ID!
+   title: String!
+   description: String!
+   attributes:AWSJSON
+   status: ContentStatus!
+   category: [Categories]
+}
+
+type Categories @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String
+  status: ContentStatus!
+}
+
+enum ContentStatus {
+  PUBLISHED
+  UNPUBLISHED
+  EXPIRED
+}

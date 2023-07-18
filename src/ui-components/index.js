@@ -35,3 +35,7 @@ export { default as EditProfile } from "./EditProfile";
 export { default as studioTheme } from "./studioTheme";
 export { default as AgendarConsultoriaCreateForm } from "./AgendarConsultoriaCreateForm";
 export { default as AgendarConsultoriaUpdateForm } from "./AgendarConsultoriaUpdateForm";
+export { default as ContentsCreateForm } from "./ContentsCreateForm";
+export { default as ContentsUpdateForm } from "./ContentsUpdateForm";
+export { default as CategoriesCreateForm } from "./CategoriesCreateForm";
+export { default as CategoriesUpdateForm } from "./CategoriesUpdateForm";
