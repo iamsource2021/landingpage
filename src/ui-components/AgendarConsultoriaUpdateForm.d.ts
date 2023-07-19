@@ -17,7 +17,6 @@ export declare type AgendarConsultoriaUpdateFormInputValues = {
     email?: string;
     mobile?: string;
     name?: string;
-    lifetime?: number;
     start?: string;
     end?: string;
 };
@@ -25,7 +24,6 @@ export declare type AgendarConsultoriaUpdateFormValidationValues = {
     email?: ValidationFunction<string>;
     mobile?: ValidationFunction<string>;
     name?: ValidationFunction<string>;
-    lifetime?: ValidationFunction<number>;
     start?: ValidationFunction<string>;
     end?: ValidationFunction<string>;
 };
@@ -35,7 +33,6 @@ export declare type AgendarConsultoriaUpdateFormOverridesProps = {
     email?: PrimitiveOverrideProps<TextFieldProps>;
     mobile?: PrimitiveOverrideProps<TextFieldProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
-    lifetime?: PrimitiveOverrideProps<TextFieldProps>;
     start?: PrimitiveOverrideProps<TextFieldProps>;
     end?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;

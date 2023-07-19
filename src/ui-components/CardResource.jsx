@@ -22,7 +22,6 @@ export default function CardResource(props) {
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
       margin="1rem"
-      cursor="pointer"
       onClick={handleContent}
       {...getOverrideProps(overrides, "CardResource")}
       {...rest}

@@ -26,14 +26,12 @@ export default function AgendarConsultoriaCreateForm(props) {
     email: "",
     mobile: "",
     name: "",
-    lifetime: "",
     start: "",
     end: "",
   };
   const [email, setEmail] = React.useState(initialValues.email);
   const [mobile, setMobile] = React.useState(initialValues.mobile);
   const [name, setName] = React.useState(initialValues.name);
-  const [lifetime, setLifetime] = React.useState(initialValues.lifetime);
   const [start, setStart] = React.useState(initialValues.start);
   const [end, setEnd] = React.useState(initialValues.end);
   const [errors, setErrors] = React.useState({});
@@ -41,7 +39,6 @@ export default function AgendarConsultoriaCreateForm(props) {
     setEmail(initialValues.email);
     setMobile(initialValues.mobile);
     setName(initialValues.name);
-    setLifetime(initialValues.lifetime);
     setStart(initialValues.start);
     setEnd(initialValues.end);
     setErrors({});
@@ -50,7 +47,6 @@ export default function AgendarConsultoriaCreateForm(props) {
     email: [{ type: "Required" }],
     mobile: [{ type: "Required" }],
     name: [{ type: "Required" }],
-    lifetime: [{ type: "Required" }],
     start: [{ type: "Required" }],
     end: [{ type: "Required" }],
   };
@@ -100,7 +96,6 @@ export default function AgendarConsultoriaCreateForm(props) {
           email,
           mobile,
           name,
-          lifetime,
           start,
           end,
         };
@@ -160,7 +155,6 @@ export default function AgendarConsultoriaCreateForm(props) {
               email: value,
               mobile,
               name,
-              lifetime,
               start,
               end,
             };
@@ -178,7 +172,7 @@ export default function AgendarConsultoriaCreateForm(props) {
         {...getOverrideProps(overrides, "email")}
       ></TextField>
       <TextField
-        label="Mobile"
+        label="Movil"
         isRequired={true}
         isReadOnly={false}
         value={mobile}
@@ -189,7 +183,6 @@ export default function AgendarConsultoriaCreateForm(props) {
               email,
               mobile: value,
               name,
-              lifetime,
               start,
               end,
             };
@@ -218,7 +211,6 @@ export default function AgendarConsultoriaCreateForm(props) {
               email,
               mobile,
               name: value,
-              lifetime,
               start,
               end,
             };
@@ -236,39 +228,6 @@ export default function AgendarConsultoriaCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Lifetime"
-        isRequired={true}
-        isReadOnly={false}
-        type="number"
-        step="any"
-        value={lifetime}
-        onChange={(e) => {
-          let value = isNaN(parseInt(e.target.value))
-            ? e.target.value
-            : parseInt(e.target.value);
-          if (onChange) {
-            const modelFields = {
-              email,
-              mobile,
-              name,
-              lifetime: value,
-              start,
-              end,
-            };
-            const result = onChange(modelFields);
-            value = result?.lifetime ?? value;
-          }
-          if (errors.lifetime?.hasError) {
-            runValidationTasks("lifetime", value);
-          }
-          setLifetime(value);
-        }}
-        onBlur={() => runValidationTasks("lifetime", lifetime)}
-        errorMessage={errors.lifetime?.errorMessage}
-        hasError={errors.lifetime?.hasError}
-        {...getOverrideProps(overrides, "lifetime")}
-      ></TextField>
-      <TextField
         label="inicia"
         isRequired={true}
         isReadOnly={false}
@@ -282,7 +241,6 @@ export default function AgendarConsultoriaCreateForm(props) {
               email,
               mobile,
               name,
-              lifetime,
               start: value,
               end,
             };
@@ -313,7 +271,6 @@ export default function AgendarConsultoriaCreateForm(props) {
               email,
               mobile,
               name,
-              lifetime,
               start,
               end: value,
             };

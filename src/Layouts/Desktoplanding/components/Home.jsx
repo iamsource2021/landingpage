@@ -17,6 +17,9 @@ import {
   useNavigate
 } from 'react-router-dom';
 
+import { DataStore } from 'aws-amplify';
+import { AgendarConsultoria } from './../../../models/index';
+
 export function Home(props) {
   // const { trackEvent } = GA();
   const navigate = useNavigate();
@@ -24,10 +27,37 @@ export function Home(props) {
   const [alertAlias, setAlertAlias] = useState({
     isAlertVisible: false
   });
+  const [showForm, setShowForm] = useState(true)
+  // const [agendarconsultoria, setAgendarconsultoria] = useState();
 
   useEffect(() => {
     document.title = "Home - Agendar Consultoría Personalizada"
   }, []);
+
+  useEffect(() => {
+      const sub = DataStore.observe(AgendarConsultoria).subscribe(msg => {
+        console.log(msg.model, msg.opType, msg.element);
+      });
+      return () => {
+        sub.unsubscribe();
+      };
+    }, []);
+
+   /**
+   * Create a new Post
+   */
+   async function onCreate(data) {
+    await DataStore.save(
+      new AgendarConsultoria({
+        email: data.email,
+        mobile: data.mobile,
+        name: data.name,
+        start:data.start,
+        end:data.end
+      })
+    );
+    // setAgendarconsultoria(a);
+  }
 
   const handleOnAnalitics = async (event) => {
     // console.log("EVENT::",document.title);    
@@ -36,6 +66,7 @@ export function Home(props) {
   }
 
   const handleOnSubmit = async (fields) => {
+
     setIsLoading(true);
     setAlertAlias({
       variation: 'success',
@@ -43,7 +74,10 @@ export function Home(props) {
       content: 'Se envio notificacion',
       isAlertVisible: true
     })
-    console.log(fields);
+    await onCreate(fields);
+    setIsLoading(false);
+    setShowForm(false);
+    
   };
 
   const AlertAlias = (props) => {
@@ -54,6 +88,7 @@ export function Home(props) {
           isDismissible={true}
           hasIcon={true}
           heading={props.props.heading}
+          marginTop={'3rem'}
         >
           {props.props.content}
         </Alert> : null
@@ -195,6 +230,7 @@ export function Home(props) {
               whiteSpace="pre-wrap"
               children="Obtén asesoramiento especializado y personalizado para tu empresa. Nuestro equipo de expertos te guiará en la implementación de la transformación digital, identificando oportunidades y diseñando estrategias adaptadas a tus necesidades. ¡Aprovecha esta oportunidad y reserva tu consultoría hoy mismo! Juntos, haremos crecer tu negocio hacia nuevas alturas."
             ></Text>
+            {showForm &&
             <AgendarConsultoriaCreateForm
               onSubmit={handleOnSubmit}
               overrides={{
@@ -206,7 +242,8 @@ export function Home(props) {
                   loadingText: "Loading..."
                 }
               }}
-            />
+            />}
+            
             <AlertAlias props={alertAlias} />
           </View>
         </Flex>

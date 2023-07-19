@@ -31,13 +31,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "lifetime": {
-                    "name": "lifetime",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "start": {
                     "name": "start",
                     "isArray": false,
@@ -346,5 +339,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.0",
-    "version": "ea98c54291b982a6617020d767c21aec"
+    "version": "683d9ca8e2feea359652e0486d99471d"
 };

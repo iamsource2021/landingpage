@@ -19,7 +19,6 @@ type EagerAgendarConsultoria = {
   readonly email: string;
   readonly mobile: string;
   readonly name: string;
-  readonly lifetime: number;
   readonly start: string;
   readonly end: string;
   readonly createdAt?: string | null;
@@ -35,7 +34,6 @@ type LazyAgendarConsultoria = {
   readonly email: string;
   readonly mobile: string;
   readonly name: string;
-  readonly lifetime: number;
   readonly start: string;
   readonly end: string;
   readonly createdAt?: string | null;
