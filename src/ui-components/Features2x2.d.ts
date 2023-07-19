@@ -13,7 +13,7 @@ export declare type Features2x2OverridesProps = {
     "Frame 13629766592"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 13629766593"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 37429766594"?: PrimitiveOverrideProps<FlexProps>;
-    "Feature A"?: PrimitiveOverrideProps<TextProps>;
+    "Feature AB"?: PrimitiveOverrideProps<TextProps>;
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.29766596"?: PrimitiveOverrideProps<TextProps>;
     "Frame 37329766597"?: PrimitiveOverrideProps<FlexProps>;
     "Feature B"?: PrimitiveOverrideProps<TextProps>;

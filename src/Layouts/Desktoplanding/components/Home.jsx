@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {
   HeroLayout2,
-  Features2x2,
   AgendarConsultoriaCreateForm,
   ContentItemCollection, 
-  CardResorceCollection
+  CardResourceCollection
 } from './../../../ui-components';
 import {
   View,
@@ -133,24 +132,11 @@ export function Home(props) {
           position="relative"
           padding="3rem"
         >
-          <CardResorceCollection overrideItems={({ item, index }) => ({
+          <CardResourceCollection overrideItems={({ item, index }) => ({
             handleContent: () => navigate(item.attributes.url)
           })} />
         </Flex>
       </View>      
-      <View
-        height="auto"
-        width="100%"
-        id="recursos"
-      >
-        <Features2x2 overrides={
-          {
-            Features2x2: {
-              width: "100%",
-            }
-          }
-        } />
-      </View>
       <View id="agendarconsultoria">
         <Flex
           direction="column"

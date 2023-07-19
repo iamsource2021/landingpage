@@ -7,18 +7,18 @@
 import * as React from "react";
 import { Resources } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps, TextProps } from "@aws-amplify/ui-react";
+import { TextProps, ViewProps } from "@aws-amplify/ui-react";
 import { SyntheticEvent } from "react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type CardResorceOverridesProps = {
-    CardResorce?: PrimitiveOverrideProps<FlexProps>;
-    "Feature AB"?: PrimitiveOverrideProps<TextProps>;
+export declare type CardResourceOverridesProps = {
+    CardResource?: PrimitiveOverrideProps<ViewProps>;
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."?: PrimitiveOverrideProps<TextProps>;
+    "Feature AB"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type CardResorceProps = React.PropsWithChildren<Partial<FlexProps> & {
+export declare type CardResourceProps = React.PropsWithChildren<Partial<ViewProps> & {
     resources?: Resources;
     handleContent?: (event: SyntheticEvent) => void;
 } & {
-    overrides?: CardResorceOverridesProps | undefined | null;
+    overrides?: CardResourceOverridesProps | undefined | null;
 }>;
-export default function CardResorce(props: CardResorceProps): React.ReactElement;
+export default function CardResource(props: CardResourceProps): React.ReactElement;

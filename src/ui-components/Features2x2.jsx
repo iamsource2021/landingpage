@@ -100,7 +100,7 @@ export default function Features2x2(props) {
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
               children="Guías prácticas"
-              {...getOverrideProps(overrides, "Feature A")}
+              {...getOverrideProps(overrides, "Feature AB")}
             ></Text>
             <Text
               fontFamily="Inter"

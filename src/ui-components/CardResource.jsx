@@ -7,46 +7,26 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Text } from "@aws-amplify/ui-react";
-export default function CardResorce(props) {
+import { Text, View } from "@aws-amplify/ui-react";
+export default function CardResource(props) {
   const { resources, handleContent, overrides, ...rest } = props;
   return (
-    <Flex
-      gap="16px"
-      direction="column"
+    <View
       width="548px"
-      height="unset"
-      justifyContent="center"
-      alignItems="center"
+      height="318px"
+      display="block"
+      gap="unset"
+      alignItems="unset"
+      justifyContent="unset"
       position="relative"
-      padding="160px 40px 40px 40px"
+      padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
+      margin="1rem"
+      cursor="pointer"
       onClick={handleContent}
-      {...getOverrideProps(overrides, "CardResorce")}
+      {...getOverrideProps(overrides, "CardResource")}
       {...rest}
     >
-      <Text
-        fontFamily="Inter"
-        fontSize="24px"
-        fontWeight="600"
-        color="rgba(13,26,38,1)"
-        lineHeight="30px"
-        textAlign="left"
-        display="block"
-        direction="column"
-        justifyContent="unset"
-        width="unset"
-        height="unset"
-        gap="unset"
-        alignItems="unset"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        whiteSpace="pre-wrap"
-        children={resources?.title}
-        {...getOverrideProps(overrides, "Feature AB")}
-      ></Text>
       <Text
         fontFamily="Inter"
         fontSize="16px"
@@ -58,13 +38,13 @@ export default function CardResorce(props) {
         direction="column"
         justifyContent="unset"
         letterSpacing="0.01px"
-        width="unset"
-        height="unset"
+        width="468px"
+        height="72px"
         gap="unset"
         alignItems="unset"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
+        position="absolute"
+        top="206px"
+        left="40px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
         isTruncated={true}
@@ -74,6 +54,28 @@ export default function CardResorce(props) {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
         )}
       ></Text>
-    </Flex>
+      <Text
+        fontFamily="Inter"
+        fontSize="24px"
+        fontWeight="600"
+        color="rgba(13,26,38,1)"
+        lineHeight="30px"
+        textAlign="left"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="468px"
+        height="unset"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="160px"
+        left="40px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={resources?.title}
+        {...getOverrideProps(overrides, "Feature AB")}
+      ></Text>
+    </View>
   );
 }
