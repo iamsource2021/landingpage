@@ -1,6 +1,6 @@
 type AgendarConsultoria @model @auth(rules: [{allow: public}]) {
-  id: ID!  @primaryKey
-  email: String! @index(name: "byStart", sortKeyFields: ["start"])
+  id: ID!
+  email: String!
   mobile: String!
   name: String!
   lifetime: Int!
@@ -9,6 +9,14 @@ type AgendarConsultoria @model @auth(rules: [{allow: public}]) {
 }
 
 type Contents @model @auth(rules: [{allow: public}]) {
+   id: ID!
+   title: String!
+   description: String!
+   attributes:AWSJSON
+   status: ContentStatus!
+   category: [Categories]
+}
+type Resources @model @auth(rules: [{allow: public}]) {
    id: ID!
    title: String!
    description: String!

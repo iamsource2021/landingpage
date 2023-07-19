@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import {
   HeroLayout2,
   Features2x2,
-  Features4x1,
-  AgendarConsultoriaCreateForm
+  AgendarConsultoriaCreateForm,
+  ContentItemCollection, 
+  CardResorceCollection
 } from './../../../ui-components';
 import {
   View,
   Alert,
   Flex,
-  Text,
-  Link,
+  Text
 } from '@aws-amplify/ui-react';
 // import GA from './../../../GA';
 
@@ -95,42 +95,49 @@ export function Home(props) {
         width="100%"
         id="casodeuso"
       >
-        <Features4x1 overrides={
-          {
-            Features4x1: {
-              width: "100%",
-            },
-            "Leer Mas...36822689": {
-              children:
-              <Link
-                onClick ={()=>navigate('/automatization')}
-                children={'Leer Mas...'}
-              />
-            },
-            "Leer Mas...36832711": {
-              children:
-              <Link
-                onClick ={()=>navigate('/analisis')}
-                children={'Leer Mas...'}
-              />
-            },
-            "Leer Mas...36832712": {
-              children:
-                <Link
-                  onClick ={()=>navigate('/colaboracion')}
-                  children={'Leer Mas...'}
-                />  
-            },
-            "Leer Mas...36832713": {
-              children:
-                <Link
-                  onClick ={()=>navigate('/gestion')}
-                  children={'Leer Mas...'}
-                />  
-            }
-          }
-        } />
+
+        <Flex
+          gap="24px"
+          direction="row"
+          width="unset"
+          height="unset"
+          justifyContent="center"
+          alignItems="center"
+          shrink="0"
+          alignSelf="stretch"
+          position="relative"
+          padding="3rem"
+        >
+          <ContentItemCollection overrideItems={({ item, index }) => ({
+            handleContent: () => navigate(item.attributes.url)
+          })} />
+        </Flex>
       </View>
+
+      <View
+        height="auto"
+        width="100%"
+        id="recursos"
+        backgroundColor={'#eff0f0'}
+      >
+
+        <Flex
+          gap="24px"
+          direction="row"
+          width="unset"
+          height="unset"
+          justifyContent="center"
+          alignItems="center"
+          shrink="0"
+          alignSelf="stretch"
+          position="relative"
+          padding="3rem"
+        >
+          <CardResorceCollection overrideItems={({ item, index }) => ({
+            handleContent: () => navigate(item.attributes.url)
+          })} />
+        </Flex>
+      </View>      
       <View
         height="auto"
         width="100%"
