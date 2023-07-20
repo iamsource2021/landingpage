@@ -28,7 +28,7 @@ export function Home(props) {
     isAlertVisible: false
   });
   const [showForm, setShowForm] = useState(true)
-  // const [agendarconsultoria, setAgendarconsultoria] = useState();
+
 
   useEffect(() => {
     document.title = "Home - Agendar Consultoría Personalizada"
@@ -59,11 +59,9 @@ export function Home(props) {
     // setAgendarconsultoria(a);
   }
 
-  const handleOnAnalitics = async (event) => {
-    // console.log("EVENT::",document.title);    
-    // trackEvent('eventButton', 'onClick', document.title);
-    navigate('/servicetransformation');
-  }
+  // const handleOnAnalitics = async (event) => {  
+  //   trackEvent('eventButton', 'onClick', document.title);
+  // }
 
   const handleOnSubmit = async (fields) => {
 
@@ -114,7 +112,7 @@ export function Home(props) {
                   justifyContent: "unset",
                 },
                 Button: {
-                  onClick: handleOnAnalitics
+                  onClick: navigate('/servicetransformation')
                 }
               }
             },

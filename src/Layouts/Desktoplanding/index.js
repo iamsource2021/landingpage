@@ -18,11 +18,13 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  useNavigate
+  useNavigate, useOutlet
 } from 'react-router-dom';
 
 import React, {useEffect} from 'react';
 import { NavBar, MarketingFooter } from './../../ui-components';
+
+
 
 const LinkAlias = (props) => {
   return (
@@ -109,7 +111,7 @@ function Footer(props) {
 }
 
 function Layout(props, ref) {
-  const { trackPageView } = GA();
+  const { trackPageView, trackEvent} = GA();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -144,11 +146,13 @@ function Layout(props, ref) {
               hasSearchIcon: true
             },
             Servicios: {
-              children:
-                <LinkAlias
-                  href={'/#servicios'}
-                  children={'Servicios'}
-                />
+              onClick:(event)=>{
+                const href = '#servicios';
+                const pathname = document.location.pathname + href;
+                trackEvent('servicio_landing', 'page_location', pathname);
+                navigate(pathname);                
+              },
+              style:{'cursor':'pointer'}
             },
             "Casos de uso": {
               children:
