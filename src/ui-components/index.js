@@ -48,3 +48,7 @@ export { default as ContentsUpdateForm } from "./ContentsUpdateForm";
 export { default as ResourcesCreateForm } from "./ResourcesCreateForm";
 export { default as ResourcesUpdateForm } from "./ResourcesUpdateForm";
 export { default as CategoriesUpdateForm } from "./CategoriesUpdateForm";
+export { default as MenuItemCreateForm } from "./MenuItemCreateForm";
+export { default as MenuItemUpdateForm } from "./MenuItemUpdateForm";
+export { default as SubMenuCreateForm } from "./SubMenuCreateForm";
+export { default as SubMenuUpdateForm } from "./SubMenuUpdateForm";

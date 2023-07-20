@@ -18,7 +18,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  useNavigate, useOutlet
+  useNavigate
 } from 'react-router-dom';
 
 import React, {useEffect} from 'react';

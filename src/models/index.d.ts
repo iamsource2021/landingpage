@@ -145,3 +145,63 @@ export declare type Categories = LazyLoading extends LazyLoadingDisabled ? Eager
 export declare const Categories: (new (init: ModelInit<Categories>) => Categories) & {
   copyOf(source: Categories, mutator: (draft: MutableModel<Categories>) => MutableModel<Categories> | void): Categories;
 }
+
+type EagerMenuItem = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<MenuItem, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly link: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyMenuItem = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<MenuItem, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly link: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type MenuItem = LazyLoading extends LazyLoadingDisabled ? EagerMenuItem : LazyMenuItem
+
+export declare const MenuItem: (new (init: ModelInit<MenuItem>) => MenuItem) & {
+  copyOf(source: MenuItem, mutator: (draft: MutableModel<MenuItem>) => MutableModel<MenuItem> | void): MenuItem;
+}
+
+type EagerSubMenu = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<SubMenu, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly link: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazySubMenu = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<SubMenu, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly link: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type SubMenu = LazyLoading extends LazyLoadingDisabled ? EagerSubMenu : LazySubMenu
+
+export declare const SubMenu: (new (init: ModelInit<SubMenu>) => SubMenu) & {
+  copyOf(source: SubMenu, mutator: (draft: MutableModel<SubMenu>) => MutableModel<SubMenu> | void): SubMenu;
+}

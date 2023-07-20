@@ -8,12 +8,14 @@ const ContentStatus = {
   "EXPIRED": "EXPIRED"
 };
 
-const { AgendarConsultoria, Contents, Resources, Categories } = initSchema(schema);
+const { AgendarConsultoria, Contents, Resources, Categories, MenuItem, SubMenu } = initSchema(schema);
 
 export {
   AgendarConsultoria,
   Contents,
   Resources,
   Categories,
+  MenuItem,
+  SubMenu,
   ContentStatus
 };
