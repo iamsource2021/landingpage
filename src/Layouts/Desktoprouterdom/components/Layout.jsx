@@ -1,14 +1,15 @@
-import { Flex, View, Link} from '@aws-amplify/ui-react';
-import { 
+import { Flex, View, Link } from '@aws-amplify/ui-react';
+import {
   AnimatedRoute,
-  Footer
+  Footer,
+  MenuItemTop
 } from './index';
 import {
   Outlet,
   useNavigate
 } from 'react-router-dom';
 
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { NavBar } from '../../../ui-components';
 import GA from './../../../GA';
 
@@ -25,7 +26,7 @@ const LinkAlias = (props) => {
 export function Layout(props, ref) {
   const { trackEvent, trackPageView } = GA();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
   }, [trackPageView]);
@@ -48,7 +49,7 @@ export function Layout(props, ref) {
           overrides={{
             "logo 1": {
               src: "/images/logo_transparent.png",
-              onClick:() => navigate('/')
+              onClick: () => navigate('/')
             },
             image: {
               display: "none"
@@ -64,35 +65,42 @@ export function Layout(props, ref) {
               hasSearchButton: false,
               hasSearchIcon: true
             },
-            Servicios: {
-              onClick:(event)=>{
-                const href = '#servicios';
-                const pathname = document.location.pathname + href;
-                trackEvent('servicio_landing', 'page_location', pathname);
-                // navigate('/'+href);                
-              },
-              style:{'cursor':'pointer'}
-            },
-            // "Casos de uso": {
-            //   children:
-            //   <MenuItemTop />
+            // Servicios: {
+            //   onClick:(event)=>{
+            //     const href = '#servicios';
+            //     const pathname = document.location.pathname + href;
+            //     trackEvent('servicio_landing', 'page_location', pathname);
+            //     // navigate('/'+href);                
+            //   },
+            //   style:{'cursor':'pointer'}
             // },
-            Recursos: {
-              children:
-                <LinkAlias
-                  href={'/#recursos'}
-                  children={'Recursos'}
-                />
-            },
-            "Agendar consultoria": {
-              children:
-                <LinkAlias
-                  href={'/#agendarconsultoria'}
-                  children={'Agendar consultoria'}
-                />
+            // "Casos de uso": {
+            //   as:"div",
+            //   children:
+            //   <MenuItemTop showChild={false} label={'Casos de uso'}/>
+            // },
+            // Recursos: {
+            //   children:
+            //     <LinkAlias
+            //       href={'/#recursos'}
+            //       children={'Recursos'}
+            //     />
+            // },
+            // "Agendar consultoria": {
+            //   children:
+            //     <LinkAlias
+            //       href={'/#agendarconsultoria'}
+            //       children={'Agendar consultoria'}
+            //     />
+            // },
+            "Frame 32129767076": {
+              overrides: {
+                children:
+                  <Flex><MenuItemTop showChild={false} label={'Casos de uso'} /></Flex>
+              }
             }
           }}
-        />  
+        />
       </View>
       <AnimatedRoute>
         <Outlet />

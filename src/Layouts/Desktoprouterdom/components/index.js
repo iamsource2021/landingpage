@@ -12,3 +12,4 @@ export { Ebooks } from './Ebooks';
 export { ScrollToTopOnNavigate } from './ScrollToTopOnNavigate';
 export { AnimatedRoute } from './AnimatedRoute';
 export { Footer } from './Footer';
+export { MenuItemTop } from './MenuItemTop';
