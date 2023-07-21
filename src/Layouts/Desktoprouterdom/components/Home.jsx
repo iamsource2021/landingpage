@@ -111,8 +111,8 @@ export function Home(props) {
                 "Type Lock Up": {
                   justifyContent: "unset",
                 },
-                Button: {
-                  onClick: navigate('/servicetransformation')
+                "Button": {
+                  onClick: ()=>navigate('/servicetransformation')
                 }
               }
             },

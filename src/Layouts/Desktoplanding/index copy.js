@@ -1,4 +1,4 @@
-import { Flex, View, Link, useTheme } from '@aws-amplify/ui-react';
+import { Flex, View, Link, useTheme} from '@aws-amplify/ui-react';
 
 import { Home } from './components/Home';
 import { Analisis } from './components/Analisis';
@@ -12,6 +12,7 @@ import { Estudiocasos } from './components/Estudiocasos';
 import { Ebooks } from './components/Ebooks';
 import { ScrollToTopOnNavigate } from './components/ScrollToTopOnNavigate';
 import { AnimatedRoute } from './components/AnimatedRoute';
+// import { MenuItemTop } from './components/MenuItemTop';
 import GA from './../../GA';
 import {
   Outlet,
@@ -114,9 +115,9 @@ function Layout(props, ref) {
   const { trackPageView, trackEvent} = GA();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    trackPageView(window.location.pathname + window.location.search);
-  }, [trackPageView]);
+  // useEffect(() => {
+  //   trackPageView(window.location.pathname + window.location.search);
+  // }, [trackPageView]);
 
   return (
     <>
@@ -150,17 +151,14 @@ function Layout(props, ref) {
                 const href = '#servicios';
                 const pathname = document.location.pathname + href;
                 trackEvent('servicio_landing', 'page_location', pathname);
-                navigate(pathname);                
+                // navigate('/'+href);                
               },
               style:{'cursor':'pointer'}
             },
-            "Casos de uso": {
-              children:
-                <LinkAlias
-                  href={'/#casodeuso'}
-                  children={'Casos de uso'}
-                />
-            },
+            // "Casos de uso": {
+            //   children:
+            //   <MenuItemTop />
+            // },
             Recursos: {
               children:
                 <LinkAlias
@@ -176,7 +174,7 @@ function Layout(props, ref) {
                 />
             }
           }}
-        />
+        />  
       </View>
       <AnimatedRoute>
         <Outlet />
