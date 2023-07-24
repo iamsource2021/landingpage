@@ -53,8 +53,9 @@ const ButtonMenu = (props) => {
   return (
     <Button variation="menu" onClick={()=>{
       const labelEvent = 'event_menu_button_' + props.label.trim().toLowerCase(); 
-      trackEvent(labelEvent, 'page_location', document.location);      
-      navigate(props.url)
+      const title = props.url.replace('/#','');
+      trackEvent(labelEvent, 'page_title', title);      
+      navigate(props.url);
     }}>{props.label}</Button>
   );
 };
