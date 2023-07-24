@@ -1,4 +1,4 @@
-import { Flex, View, Link } from '@aws-amplify/ui-react';
+import { Flex, View } from '@aws-amplify/ui-react';
 import {
   AnimatedRoute,
   Footer,
@@ -13,18 +13,8 @@ import React, { useEffect } from 'react';
 import { NavBar } from '../../../ui-components';
 import GA from './../../../GA';
 
-
-const LinkAlias = (props) => {
-  return (
-    <Link
-      href={props.href}>
-      {props.children}
-    </Link>
-  )
-}
-
 export function Layout(props, ref) {
-  const { trackEvent, trackPageView } = GA();
+  const { trackPageView } = GA();
   const navigate = useNavigate();
 
   useEffect(() => {

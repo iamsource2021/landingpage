@@ -8,6 +8,9 @@ import {
 import {
   useNavigate  
 } from 'react-router-dom';
+import GA from './../../../GA';
+
+const { trackEvent } = GA();
 
 const IconCaret = () => {
   return (
@@ -28,7 +31,19 @@ const MenuGroups = (props) => {
         </MenuButton >
       }
     >
-      {Object.values(props.items).map((item) => <MenuItem key={item.label} onClick={()=>navigate(item.url)}>{item.label}</MenuItem>)}
+      {
+        Object.values(props.items).map((item) => 
+        <MenuItem 
+        key={item.label} 
+        onClick={()=>{
+          const labelEvent = 'event_menu_item_' + item.label.trim().toLowerCase(); 
+          trackEvent(labelEvent, 'page_location', document.location); 
+          navigate(item.url);
+        }}>
+          {item.label}
+        </MenuItem>
+        )
+      }
     </Menu>
   );
 };
