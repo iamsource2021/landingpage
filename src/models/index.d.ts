@@ -154,6 +154,7 @@ type EagerMenuItem = {
   readonly id: string;
   readonly name: string;
   readonly link: string;
+  readonly status: ContentStatus | keyof typeof ContentStatus;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -166,6 +167,7 @@ type LazyMenuItem = {
   readonly id: string;
   readonly name: string;
   readonly link: string;
+  readonly status: ContentStatus | keyof typeof ContentStatus;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -184,6 +186,7 @@ type EagerSubMenu = {
   readonly id: string;
   readonly name: string;
   readonly link: string;
+  readonly status: ContentStatus | keyof typeof ContentStatus;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -196,6 +199,7 @@ type LazySubMenu = {
   readonly id: string;
   readonly name: string;
   readonly link: string;
+  readonly status: ContentStatus | keyof typeof ContentStatus;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

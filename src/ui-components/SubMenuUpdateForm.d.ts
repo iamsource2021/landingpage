@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+import { GridProps, SelectFieldProps, TextFieldProps } from "@aws-amplify/ui-react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { SubMenu } from "../models";
 export declare type ValidationResponse = {
@@ -16,16 +16,19 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type SubMenuUpdateFormInputValues = {
     name?: string;
     link?: string;
+    status?: string;
 };
 export declare type SubMenuUpdateFormValidationValues = {
     name?: ValidationFunction<string>;
     link?: ValidationFunction<string>;
+    status?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type SubMenuUpdateFormOverridesProps = {
     SubMenuUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     name?: PrimitiveOverrideProps<TextFieldProps>;
     link?: PrimitiveOverrideProps<TextFieldProps>;
+    status?: PrimitiveOverrideProps<SelectFieldProps>;
 } & EscapeHatchProps;
 export declare type SubMenuUpdateFormProps = React.PropsWithChildren<{
     overrides?: SubMenuUpdateFormOverridesProps | undefined | null;

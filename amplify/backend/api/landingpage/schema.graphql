@@ -35,13 +35,15 @@ type MenuItem @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   link: String!
-  submenus: [SubMenu!]!
+  submenus: [SubMenu]
+  status: ContentStatus!
 }
 
 type SubMenu @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   link: String!
+  status: ContentStatus!
 }
 
 

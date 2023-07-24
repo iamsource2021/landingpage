@@ -6,7 +6,13 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import {
+  Button,
+  Flex,
+  Grid,
+  SelectField,
+  TextField,
+} from "@aws-amplify/ui-react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { SubMenu } from "../models";
 import { fetchByPath, validateField } from "./utils";
@@ -26,9 +32,11 @@ export default function SubMenuUpdateForm(props) {
   const initialValues = {
     name: "",
     link: "",
+    status: "",
   };
   const [name, setName] = React.useState(initialValues.name);
   const [link, setLink] = React.useState(initialValues.link);
+  const [status, setStatus] = React.useState(initialValues.status);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = subMenuRecord
@@ -36,6 +44,7 @@ export default function SubMenuUpdateForm(props) {
       : initialValues;
     setName(cleanValues.name);
     setLink(cleanValues.link);
+    setStatus(cleanValues.status);
     setErrors({});
   };
   const [subMenuRecord, setSubMenuRecord] = React.useState(subMenuModelProp);
@@ -52,6 +61,7 @@ export default function SubMenuUpdateForm(props) {
   const validations = {
     name: [{ type: "Required" }],
     link: [{ type: "Required" }],
+    status: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -81,6 +91,7 @@ export default function SubMenuUpdateForm(props) {
         let modelFields = {
           name,
           link,
+          status,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -138,6 +149,7 @@ export default function SubMenuUpdateForm(props) {
             const modelFields = {
               name: value,
               link,
+              status,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -163,6 +175,7 @@ export default function SubMenuUpdateForm(props) {
             const modelFields = {
               name,
               link: value,
+              status,
             };
             const result = onChange(modelFields);
             value = result?.link ?? value;
@@ -177,6 +190,48 @@ export default function SubMenuUpdateForm(props) {
         hasError={errors.link?.hasError}
         {...getOverrideProps(overrides, "link")}
       ></TextField>
+      <SelectField
+        label="Status"
+        placeholder="Please select an option"
+        isDisabled={false}
+        value={status}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              link,
+              status: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.status ?? value;
+          }
+          if (errors.status?.hasError) {
+            runValidationTasks("status", value);
+          }
+          setStatus(value);
+        }}
+        onBlur={() => runValidationTasks("status", status)}
+        errorMessage={errors.status?.errorMessage}
+        hasError={errors.status?.hasError}
+        {...getOverrideProps(overrides, "status")}
+      >
+        <option
+          children="Published"
+          value="PUBLISHED"
+          {...getOverrideProps(overrides, "statusoption0")}
+        ></option>
+        <option
+          children="Unpublished"
+          value="UNPUBLISHED"
+          {...getOverrideProps(overrides, "statusoption1")}
+        ></option>
+        <option
+          children="Expired"
+          value="EXPIRED"
+          {...getOverrideProps(overrides, "statusoption2")}
+        ></option>
+      </SelectField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

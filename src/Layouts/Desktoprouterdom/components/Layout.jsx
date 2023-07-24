@@ -2,7 +2,7 @@ import { Flex, View, Link } from '@aws-amplify/ui-react';
 import {
   AnimatedRoute,
   Footer,
-  MenuItemTop
+  MenuCustom
 } from './index';
 import {
   Outlet,
@@ -30,6 +30,28 @@ export function Layout(props, ref) {
   useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
   }, [trackPageView]);
+
+  const menuItems = [
+    {
+      url:'/#',
+      label:'Servicios',
+      subMenuItems:[
+        {
+          url:'/guias',
+          label:'Guias'
+        },
+        {
+          url:'/webinars',
+          label:'Webinars'
+        }        
+      ]
+    },
+    {
+      url:'/#recursos',
+      label:'Recursos',
+      subMenuItems:[]
+    },    
+  ];
 
   return (
     <Flex
@@ -65,39 +87,10 @@ export function Layout(props, ref) {
               hasSearchButton: false,
               hasSearchIcon: true
             },
-            // Servicios: {
-            //   onClick:(event)=>{
-            //     const href = '#servicios';
-            //     const pathname = document.location.pathname + href;
-            //     trackEvent('servicio_landing', 'page_location', pathname);
-            //     // navigate('/'+href);                
-            //   },
-            //   style:{'cursor':'pointer'}
-            // },
-            // "Casos de uso": {
-            //   as:"div",
-            //   children:
-            //   <MenuItemTop showChild={false} label={'Casos de uso'}/>
-            // },
-            // Recursos: {
-            //   children:
-            //     <LinkAlias
-            //       href={'/#recursos'}
-            //       children={'Recursos'}
-            //     />
-            // },
-            // "Agendar consultoria": {
-            //   children:
-            //     <LinkAlias
-            //       href={'/#agendarconsultoria'}
-            //       children={'Agendar consultoria'}
-            //     />
-            // },
             "Frame 32129767076": {
-              overrides: {
-                children:
-                  <Flex><MenuItemTop showChild={false} label={'Casos de uso'} /></Flex>
-              }
+              gap:'4px',
+              children:                
+                <MenuCustom items={menuItems}/>                
             }
           }}
         />
