@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import GA from './../../../GA';
 
-const { trackEvent } = GA();
+const { trackEvent, trackEventCustom } = GA();
 
 const IconCaret = () => {
   return (
@@ -64,7 +64,13 @@ const ButtonMenu = (props) => {
       });
 
       document.title = title;
-      trackEvent(labelEvent, 'page_title', title);      
+      // trackEventCustom({
+      //   category:labelEvent, 
+      //   action:'page_title', 
+      //   label:title,
+      //   dimension1: title
+      // });
+      trackEvent(labelEvent, 'title', title);      
       // navigate(props.url);
     }}>{props.label}</Button>
   );
