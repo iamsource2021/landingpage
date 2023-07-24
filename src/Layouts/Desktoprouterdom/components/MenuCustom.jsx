@@ -51,7 +51,11 @@ const MenuGroups = (props) => {
 const ButtonMenu = (props) => {  
   const navigate = useNavigate();
   return (
-    <Button variation="menu" onClick={()=>navigate(props.url)}>{props.label}</Button>
+    <Button variation="menu" onClick={()=>{
+      const labelEvent = 'event_menu_button_' + props.label.trim().toLowerCase(); 
+      trackEvent(labelEvent, 'page_location', document.location);      
+      navigate(props.url)
+    }}>{props.label}</Button>
   );
 };
 
