@@ -29,14 +29,7 @@ const GA = () => {
     return ReactGA.event({ category, action, label });
   };
 
-  const trackEventCustom = (event) =>{
-    const {category, action, label, dimension1} = event;
-    console.log(category, action, label, dimension1);
-     ReactGA.set({dimension1:dimension1});
-    return ReactGA.event({ category, action, label, dimension1});
-  };
-
-  return { trackPageView, trackEvent, trackInit, trackEventCustom };
+  return { trackPageView, trackEvent, trackInit};
 };
 
 export default GA;
