@@ -49,13 +49,23 @@ const MenuGroups = (props) => {
 };
 
 const ButtonMenu = (props) => {  
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <Button variation="menu" onClick={()=>{
       const labelEvent = 'event_menu_button_' + props.label.trim().toLowerCase(); 
-      const title = props.url.replace('/#','');
+      const title = props.url?.replace('/#','');
+      const elementToScroll = document.getElementById(title);
+
+      if (!elementToScroll) return;
+
+      window.scrollTo({
+        top: elementToScroll.offsetTop,
+        behavior: "smooth"
+      });
+
+      document.title = title;
       trackEvent(labelEvent, 'page_title', title);      
-      navigate(props.url);
+      // navigate(props.url);
     }}>{props.label}</Button>
   );
 };
