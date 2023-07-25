@@ -33,7 +33,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTopOnNavigate />
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
           <Route exact path="/analisis" element={<Analisis />} />
           <Route exact path="/servicetransformation" element={<ServiceTransformation />} />

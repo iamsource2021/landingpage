@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   Menu, 
   MenuItem, 
@@ -48,25 +49,26 @@ const MenuGroups = (props) => {
   );
 };
 
+
 const ButtonMenu = (props) => {  
-  // const navigate = useNavigate();
+  const labelEvent = 'event_menu_button_' + props.label.trim().toLowerCase();
+  const _title = props.url?.replace('/#', '');
   return (
-    <Button variation="menu" onClick={()=>{
-      const labelEvent = 'event_menu_button_' + props.label.trim().toLowerCase(); 
-      const title = props.url?.replace('/#','');
-      const elementToScroll = document.getElementById(title);
+    <> 
+      <Button variation="menu" onClick={() => {
+        const elementToScroll = document.getElementById(_title);
 
-      if (!elementToScroll) return;
+        if (!elementToScroll) return;
 
-      window.scrollTo({
-        top: elementToScroll.offsetTop,
-        behavior: "smooth"
-      });
-
-      document.title = title;
-      trackEvent(labelEvent, 'page_title', title);      
-      // navigate(props.url);
-    }}>{props.label}</Button>
+        window.scrollTo({
+          top: elementToScroll.offsetTop,
+          behavior: "smooth"
+        });
+        document.title = _title;
+        trackEvent(labelEvent, 'page_title', _title);  
+        
+      }}>{props.label}</Button>
+    </>
   );
 };
 
